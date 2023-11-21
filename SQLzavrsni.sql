@@ -23,7 +23,7 @@ ulica_stanovanja varchar (100) not null,
 grad_stanovanja varchar (100) not null);
 
 create table posudbe (
-sifra_posudbe int not null primary key identity(1,1),
+sifra_posudbe int not null primary key identity(978101,1),
 datum_podizanja date not null,
 datum_vracanja date,
 iznos decimal(16,2),
@@ -52,3 +52,5 @@ insert into posudbe values ('2020-01-24', null, 1000000.00, 5.158, 1128, 103)
 insert into posudbe values ('2022-11-20', null, 10000.00, 4.11, 1125, 100)
 
 select*from posudbe
+
+update posudbe set iznos=iznos+100000 where sifra_posudbe = 978101
