@@ -135,3 +135,30 @@ update ostavljena set majica = 'siva' where sifra='5008'
 select majica
 from ostavljena where lipa not in (9,10,20,30,35)
 
+select a.ekstrovertno, f.vesta, e.kuna
+from brat a
+inner join prijatelj_brat b on a.sifra=b.brat
+inner join prijatelj c on b.brat=c.sifra
+inner join ostavljena d on c.sifra=d.prijatelj
+inner join snasa e on d.sifra=e.ostavljena
+inner join punica f on e.sifra=f.snasa
+where d.lipa not like '91' and c.haljina not like '%ba%'
+order by e.kuna desc
+
+select*from prijatelj_brat
+
+--ekstravertno iz brat, vesta iz punica, kuna iz snasa a da je lipa iz ostavljena je različito od 91
+--haljina iz prijatelj BA, sort by kuna iz snaša
+
+select a.ekstrovertno, f.vesta, e.kuna
+from brat a inner join prijatelj_brat b on a.sifra = b.brat
+inner join prijatelj c on b.brat = c.sifra
+inner join ostavljena d on c.sifra = d.prijatelj
+inner join snasa e on d.sifra = e.ostavljena
+inner join punica f on e.sifra = f.snasa
+order by 3 desc; 
+
+
+
+
+

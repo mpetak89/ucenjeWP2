@@ -21,8 +21,8 @@
             */
 
             // varijabla je prostor u memoriji
-            //Console.Write("Unesi ime: ");
-            //string Ime = Console.ReadLine();
+            Console.Write("Unesi ime: ");
+            string Ime ;
 
             //Console.WriteLine("Unijeli ste " + Ime);
 

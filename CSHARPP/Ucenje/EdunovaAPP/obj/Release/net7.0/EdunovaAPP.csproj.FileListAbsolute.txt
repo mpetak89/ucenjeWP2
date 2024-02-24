@@ -1,0 +1,8 @@
+C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\EdunovaAPP\obj\Release\net7.0\EdunovaAPP.csproj.AssemblyReference.cache
+C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\EdunovaAPP\obj\Release\net7.0\EdunovaAPP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\EdunovaAPP\obj\Release\net7.0\EdunovaAPP.AssemblyInfoInputs.cache
+C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\EdunovaAPP\obj\Release\net7.0\EdunovaAPP.AssemblyInfo.cs
+C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\EdunovaAPP\obj\Release\net7.0\EdunovaAPP.csproj.CoreCompileInputs.cache
+C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\EdunovaAPP\obj\Release\net7.0\EdunovaAPP.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\EdunovaAPP\obj\Release\net7.0\EdunovaAPP.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\EdunovaAPP\obj\Release\net7.0\EdunovaAPP.sourcelink.json

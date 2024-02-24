@@ -54,3 +54,6 @@ insert into posudbe values ('2022-11-20', null, 10000.00, 4.11, 1125, 100)
 select*from posudbe
 
 update posudbe set iznos=iznos+100000 where sifra_posudbe = 978101
+
+select
+from komitenti
