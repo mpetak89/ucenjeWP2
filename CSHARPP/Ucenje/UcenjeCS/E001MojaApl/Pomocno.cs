@@ -21,7 +21,9 @@ namespace UcenjeCS.E001MojaApl
                 }
                 catch
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Neispravan unos");
+                    Console.ResetColor();
                 }
             }
         }

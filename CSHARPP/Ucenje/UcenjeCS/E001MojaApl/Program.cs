@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
+using UcenjeCS.E15KonzolnaAplikacija;
 
 namespace UcenjeCS.E001MojaApl
 {
@@ -26,6 +27,7 @@ namespace UcenjeCS.E001MojaApl
             Console.WriteLine("4.Izlaz iz programa");
             Console.WriteLine("*********************************************");
             OdabirStavkeIzbornika();
+
 
         }
         private void OdabirStavkeIzbornika()
@@ -72,6 +74,7 @@ namespace UcenjeCS.E001MojaApl
 
         private void PozdravnaPoruka()
         {
+        Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("***********************************");
             Console.WriteLine("Dobrodošli u aplikaciju Banka");
             Console.WriteLine("***********************************");
@@ -84,20 +87,26 @@ namespace UcenjeCS.E001MojaApl
                     Console.WriteLine("Prikaži sve kredite");
                     Console.WriteLine();
                     PrikaziKredite();
+                    Console.WriteLine();
                     IzbornikRadSKreditima();
+                    Console.WriteLine();
                     break;
                 case 2:
                     Console.WriteLine("Dodaj kredit");
                     Console.WriteLine();
                     DodajKredit();
+                    Console.WriteLine();
                     break;
                 case 3:
                     Console.WriteLine("Uredi kredit");
                     Console.WriteLine();
                     UrediKredit();
+                    Console.WriteLine();
                     break;
                 case 4:
                     Console.WriteLine("Obriši kredit");
+                    Console.WriteLine();
+                    ObrisiKredit();
                     Console.WriteLine();
                     break;
                 case 5:
@@ -107,21 +116,36 @@ namespace UcenjeCS.E001MojaApl
                     Console.WriteLine("Pogrešan odabir");
                     Console.WriteLine();
                     IzbornikRadSKreditima();
+                    Console.WriteLine();
                     break;
             }
             
         }
 
+        private void ObrisiKredit()
+        {
+                 
+            Krediti.RemoveAt(Pomocno.UcitajInt("Odaberi kredit za brisanje: ") - 1);
+            Console.WriteLine("Obrisali ste kredit");
+            Console.WriteLine();
+            IzbornikRadSKreditima(); 
+            OdabirStavkeIzbornikaKredit();
+        }
+
         private void UrediKredit()
         {
+            var s = Krediti[Pomocno.UcitajInt("Odaberite kredit za promjenu: ")-1];
+            s.SifraKredita = Pomocno.UcitajInt("Stara šifra: " + s.SifraKredita + "; Unesite novu šifru kredita: ");
+            s.NazivKredita = Pomocno.UcitajString("Stari naziv: " + s.NazivKredita + "; Unesite novi naziv kredita: ");
+            Console.WriteLine();
             PrikaziKredite();
-            var s = Krediti[Pomocno.UcitajInt("Odaberite kredit za izmjenu: ")];
         }
 
         private void PrikaziKredite()
         {
-            var i = 1;
-            Krediti.ForEach (s=> {Console.WriteLine(i++ + " . " + s);});
+            var i = 0;
+            Krediti.ForEach (s=> {Console.WriteLine(++i + ". " + s);});
+            Console.WriteLine();
             IzbornikRadSKreditima();
         }
 
@@ -130,7 +154,6 @@ namespace UcenjeCS.E001MojaApl
             Krediti.Add(new Model.Kredit()
             {
                 SifraKredita = Pomocno.UcitajInt("Unesi šifru kredita: "),
-                VrstaKredita = Pomocno.UcitajString("Unesi vrstu kredita: "),
                 NazivKredita = Pomocno.UcitajString("Unesi naziv kredita: "),
               
             });

@@ -10,7 +10,6 @@ namespace UcenjeCS.E001MojaApl.Model
     {
         public int SifraKredita { get; set; }
         public string NazivKredita { get; set; }
-        public string VrstaKredita { get; set; }
         public override string ToString()
         {
             return NazivKredita; 
