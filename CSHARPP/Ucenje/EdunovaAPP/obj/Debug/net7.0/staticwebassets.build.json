@@ -1,11 +1,77 @@
 {
   "Version": 1,
-  "Hash": "G7SNPf63FVgerhaydEyM4cy8laqKm1v3m1kQa8Ul/f8=",
+  "Hash": "FA7e6+tyO3OexpAwOIRHCEDGTl8AO4d/aupGu5yx1Kw=",
   "Source": "EdunovaAPP",
   "BasePath": "_content/EdunovaAPP",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "EdunovaAPP\\wwwroot",
+      "Source": "EdunovaAPP",
+      "ContentRoot": "C:\\Users\\Korisnik\\Documents\\GitHub\\EdunovaWP2\\CSHARP\\UcenjeWP2\\EdunovaAPP\\wwwroot\\",
+      "BasePath": "_content/EdunovaAPP",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\EdunovaWP2\\CSHARP\\UcenjeWP2\\EdunovaAPP\\wwwroot\\assets\\index-BCsi02GD.js",
+      "SourceId": "EdunovaAPP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Korisnik\\Documents\\GitHub\\EdunovaWP2\\CSHARP\\UcenjeWP2\\EdunovaAPP\\wwwroot\\",
+      "BasePath": "_content/EdunovaAPP",
+      "RelativePath": "assets/index-BCsi02GD.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\index-BCsi02GD.js"
+    },
+    {
+      "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\EdunovaWP2\\CSHARP\\UcenjeWP2\\EdunovaAPP\\wwwroot\\favicon.ico",
+      "SourceId": "EdunovaAPP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Korisnik\\Documents\\GitHub\\EdunovaWP2\\CSHARP\\UcenjeWP2\\EdunovaAPP\\wwwroot\\",
+      "BasePath": "_content/EdunovaAPP",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\EdunovaWP2\\CSHARP\\UcenjeWP2\\EdunovaAPP\\wwwroot\\index.html",
+      "SourceId": "EdunovaAPP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Korisnik\\Documents\\GitHub\\EdunovaWP2\\CSHARP\\UcenjeWP2\\EdunovaAPP\\wwwroot\\",
+      "BasePath": "_content/EdunovaAPP",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
 }

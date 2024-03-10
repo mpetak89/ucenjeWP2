@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UcenjeCS.E12KlasaObjekt.Edunova
 {
-    //POCO klasa
+    // POCO klasa
     internal class Smjer
     {
         public int Sifra { get; set; }
@@ -14,6 +14,6 @@ namespace UcenjeCS.E12KlasaObjekt.Edunova
         public int BrojSati { get; set; }
         public float Cijena { get; set; }
         public float Upisnina { get; set; }
-        public bool Verificiran { get; set; }
+        public bool verificiran { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿using EdunovaAPP.Data;
+using EdunovaAPP.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -39,9 +39,9 @@ builder.Services.AddSwaggerGen(sgo =>
 
 // Svi se od svuda na sve moguće načine mogu spojitina naš API
 // Čitati https://code-maze.com/aspnetcore-webapi-best-practices/
-builder.Services.AddCors(opcije =>
+builder.Services.AddCors(opcije=>
 {
-    opcije.AddPolicy("CorsPolicy",
+    opcije.AddPolicy("CorsPolicy", 
         builder =>
             builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
     );
@@ -64,10 +64,10 @@ var app = builder.Build();
 app.UseSwagger();
 // mogućnost generiranja poziva rute u CMD i Powershell
 app.UseSwaggerUI(opcije =>
-{
-    opcije.ConfigObject.
-    AdditionalItems.Add("requestSnippetsEnabled", true);
-});
+    {
+        opcije.ConfigObject.
+        AdditionalItems.Add("requestSnippetsEnabled", true);
+    });
 //}
 
 app.UseHttpsRedirection();
@@ -75,6 +75,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+app.UseStaticFiles();
 
 app.UseCors("CorsPolicy");
 

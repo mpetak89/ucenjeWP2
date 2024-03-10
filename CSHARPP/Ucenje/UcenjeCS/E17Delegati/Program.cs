@@ -8,9 +8,8 @@ namespace UcenjeCS.E17Delegati
 {
     internal class Program
     {
-        public Program()
-        {
-            new PrimjerKoristenja();
+        public Program() {
+            new PrimjerKoristenja1();
             new PrimjerKoristenja2();
         }
     }

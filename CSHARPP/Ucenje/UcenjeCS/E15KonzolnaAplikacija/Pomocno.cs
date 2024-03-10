@@ -1,42 +1,108 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UcenjeCS.E15KonzolnaAplikacija
+﻿namespace UcenjeCS.E15KonzolnaAplikacija
 {
     internal class Pomocno
     {
-        public static int ucitajint (string poruka)
+        public static bool dev;
+        public static int ucitajBrojRaspon(string poruka, string greska, 
+            int poc, int kraj)
         {
-            for (; ; ) 
+            int b;
+            while (true)
             {
                 Console.Write(poruka);
-                try 
+                try
                 {
-                    return int.Parse(Console.ReadLine());
+                    b = int.Parse(Console.ReadLine());
+                    if(b>=poc && b<=kraj)
+                    {
+                        return b;
+                    }
+                    Console.WriteLine(greska);
                 }
-                catch 
+                catch (Exception ex)
                 {
-                    Console.WriteLine("Neispravan unos");
+                    Console.WriteLine(greska);
                 }
             }
         }
-        public static string ucitajstring (string poruka)
+
+        internal static int ucitajCijeliBroj(string poruka, string greska)
         {
-            string s;
-            while (true) 
+            int b;
+            while(true)
+            {
+                Console.Write(poruka);
+                try
+                {
+                    b = int.Parse(Console.ReadLine());
+                    if (b > 0)
+                    {
+                        return b;
+                    }
+                    Console.WriteLine(greska);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(greska);
+                }
+            }
+        }
+
+        internal static decimal ucitajDecimalniBroj(string poruka, string greska)
+        {
+            decimal b;
+            while (true)
+            {
+                Console.Write(poruka);
+                try
+                {
+                    b = decimal.Parse(Console.ReadLine());
+                    if (b > 0)
+                    {
+                        return b;
+                    }
+                    Console.WriteLine(greska);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(greska);
+                }
+            }
+        }
+
+        internal static bool ucitajBool(string poruka)
+        {
+            Console.Write(poruka);
+            return Console.ReadLine().Trim().ToLower().Equals("da") ? true : false;
+        }
+
+        internal static string UcitajString(string poruka, string greska)
+        {
+            string s = "";
+            while(true)
             {
                 Console.Write(poruka);
                 s = Console.ReadLine();
-                if (s.Trim().Length == 0 )
+                if (s!=null && s.Trim().Length > 0)
                 {
-                    Console.WriteLine("Obavezan unos");
-                    continue;
+                    return s;
                 }
-                return s;
+                Console.WriteLine(greska);
+            }
+        }
 
+        internal static DateTime ucitajDatum(string v1, string v2)
+        {
+            while(true)
+            {
+                try
+                {
+                    Console.WriteLine(v1);
+                    return DateTime.Parse(Console.ReadLine());
+                }catch (Exception ex)
+                {
+                    Console.WriteLine(v2);
+                }
             }
         }
     }

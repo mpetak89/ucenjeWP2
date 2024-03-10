@@ -6,18 +6,11 @@ using System.Threading.Tasks;
 
 namespace UcenjeCS.E13Nasljedivanje
 {
-    internal class Predavac:Object
+    internal class Predavac:Osoba
     {
-        public int Sifra { get; set; }
+        public string Iban { get; set; }
 
-        public string Ime { get; set; }
-
-        public string Prezime { get; set; }
-
-        public string oib { get; set; }
-
-        public string email { get; set; }
-
+       
 
     }
 }

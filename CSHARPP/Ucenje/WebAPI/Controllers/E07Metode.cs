@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using IbanNet;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
     [ApiController]
     [Route("E07")]
-    public class E07Metode : ControllerBase
+    public class E07Metode:ControllerBase
     {
         [HttpGet]
         [Route("zad1")]
@@ -13,8 +14,17 @@ namespace WebAPI.Controllers
             // Napišite metodu koja za dva primljena cijela
             // broj vraća njihov zbroj
             // Neka ova metoda Zad1 vrati rezultat napisane metode zadatka
+            
+            return Zbroji(PrviBroj,DrugiBroj);
+            
+        }
 
-            return Zbroji(PrviBroj, DrugiBroj);
+        [HttpGet]
+        [Route("iban")]
+        public bool provjeri(string iban)
+        {
+            return new IbanValidator().Validate(iban).IsValid;
+            
 
         }
 

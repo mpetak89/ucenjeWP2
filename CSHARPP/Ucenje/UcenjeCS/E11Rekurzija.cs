@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UcenjeCS
+﻿namespace UcenjeCS
 {
     internal class E11Rekurzija
     {
         public static void Izvedi()
         {
             // rekurzija je kada metoda zove samu sebe
-            // Izvedi();  // Dobijemo Stackoverflow iznimku
+            // Izvedi(); // Dobijemo scatoverflow iznimku
 
             Console.WriteLine(Zbroj(100));
 
@@ -19,13 +13,15 @@ namespace UcenjeCS
 
         private static int Zbroj(int v)
         {
-            // uvjet prekida rekurzije
+
+            // MORA BITI uvjet prekida rekurzije
             if (v == 1)
             {
                 return 1;
             }
 
-            return v + Zbroj(v - 1);
+            return v + Zbroj(v-1);
+
         }
     }
 }

@@ -8,8 +8,7 @@ namespace UcenjeCS.E18Ekstenzije
 {
     internal static class Ekstenzije
     {
-        public static void OdradiPosao(this ISucelje sucelje)
-        {
+        public static void OdradiPosao(this ISucelje sucelje) {
             sucelje.Posao();
         }
     }

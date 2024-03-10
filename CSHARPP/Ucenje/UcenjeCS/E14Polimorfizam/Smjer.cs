@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace UcenjeCS.E14Polimorfizam
 {
-    internal class Smjer:Entitet
+    internal class Smjer: Entitet
     {
-        public string Naziv {  get; set; }
+        public string Naziv { get; set; }
+        public int BrojSati { get; set; }
 
-        public int Brojsati { get; set; }
+        public  float Cijena { get; set; }
 
         public float Upisnina { get; set; }
 
-        public bool Verificiran {  get; set; }
+        public bool Verificiran { get; set; }
     }
 }

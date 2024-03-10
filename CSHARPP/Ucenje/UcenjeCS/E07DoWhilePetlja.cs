@@ -16,7 +16,7 @@ namespace UcenjeCS
             // do while osigurava minimalno jedno izvođenje
             // uvjet je na kraju petlje
 
-
+            
             do
             {
                 Console.WriteLine("Edunova");
@@ -27,9 +27,9 @@ namespace UcenjeCS
 
             // Prekidanje vasnje petlje
 
-            for (; ; )
+            for(; ; )
             {
-                while (true)
+                while(true)
                 {
                     do
                     {
@@ -38,11 +38,11 @@ namespace UcenjeCS
                         goto nakonfor;
                     } while (true);
                     //  ovdje se nastavlja 1
-                    // break; //2
+                   // break; //2
                 }
                 // ovdje se nastavlja 2
             }
-        nakonfor: // ovo je labela
+            nakonfor: // ovo je labela
             Console.WriteLine("odradio");
 
         }

@@ -9,8 +9,7 @@ namespace UcenjeCS.E18Ekstenzije
     internal class Program
     {
 
-        public Program()
-        {
+        public Program() {
 
             var g = new Grupa();
             var s = new Smjer();

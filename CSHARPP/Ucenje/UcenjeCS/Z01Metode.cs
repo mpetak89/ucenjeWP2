@@ -14,7 +14,7 @@ namespace UcenjeCS
 
         public static int CijeliDioZbroja(float a, float b)
         {
-            return CijeliDioZbroja((double)a, (double)b);
+            return CijeliDioZbroja((double)a,(double)b);
         }
 
         // method overloading

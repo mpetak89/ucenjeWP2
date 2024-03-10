@@ -21,7 +21,7 @@ namespace UcenjeCS
             // bolje
             Console.WriteLine(ImeRacunala());
 
-            Console.WriteLine(IsPrimBroj(1200000) ? "PRIM" : "NIJE");
+            Console.WriteLine(IsPrimBroj(1200000) ? "PRIM" : "NIJE" );
 
             // Zadatak: Ispiši sve prim brojeve između dva broja
             SviPrimBrojevi(27, 99);
@@ -29,7 +29,7 @@ namespace UcenjeCS
 
         private static void SviPrimBrojevi(int Od, int Do)
         {
-            for (int i = Od; i <= Do; i++)
+           for(int i = Od;i<=Do;i++)
             {
                 if (IsPrimBroj(i))
                 {
@@ -49,7 +49,7 @@ namespace UcenjeCS
         static void Tip2(int Od, int Do)
         {
             // ispišite sve parne brojeve između dva primljena parametra
-            for (int i = Od; i <= Do; i++)
+            for(int i=Od; i<=Do; i++)
             {
                 if (i % 2 != 0)
                 {
@@ -74,7 +74,7 @@ namespace UcenjeCS
 
             for (int i = 2; i < Broj; i++)
             {
-                if (Broj % i == 0)
+                if(Broj % i == 0)
                 {
                     return false; // shotcuircuting
                 }

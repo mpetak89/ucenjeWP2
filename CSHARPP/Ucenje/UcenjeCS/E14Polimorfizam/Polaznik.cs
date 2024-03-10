@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace UcenjeCS.E14Polimorfizam
 {
-    internal class Polaznik:Osoba
+    internal class Polaznik: Osoba
     {
-        public string Brojugovora {  get; set; }
+        public string BrojUgovora { get; set; }
 
         public override string Pozdravi()
         {
