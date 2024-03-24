@@ -5,6 +5,10 @@
     width: 100%;
     margin-bottom: 5px;
 }
+.gumb2{
+    width: 25%;
+    margin: 4px;
+}
 .btn-success {
     background-color: rgba(158, 212, 158, 0.905) !important;
 }

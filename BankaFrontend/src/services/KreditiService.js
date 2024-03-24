@@ -11,14 +11,14 @@ async function getKrediti (){
     });
 }
 
-    async function obrisiKredit (sifra_kredita){
-        return await httpService.delete('/Kredit/'+ sifra_kredita)
-        .then((res)=>{ 
-            return {ok: true, poruka: res};
-        }).catch((e)=>{
-            console.log(e);
-        });
-    }
+async function obrisiKredit (sifra_Kredita){
+    return await httpService.delete('/Kredit/'+ sifra_Kredita)
+    .then((res)=>{
+        return {ok: true, poruka: res};
+    }).catch((e)=>{
+        console.log(e);
+    });
+}
     
 export default{
     getKrediti,

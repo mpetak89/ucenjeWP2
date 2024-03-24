@@ -22,8 +22,8 @@ async function dohvatiKredite (){
 useEffect(()=>{dohvatiKredite();
 },[]);
 
-async function obrisiKredit (sifra_Kredit){
-    const odgovor = await Kreditiservice.obrisiKredit(sifra_Kredit);
+async function obrisiKredit (sifra_Kredita){
+    const odgovor = await Kreditiservice.obrisiKredit(sifra_Kredita);
     if (odgovor.ok) {
 console.log (odgovor.poruka);
 dohvatiKredite();
@@ -51,17 +51,17 @@ dohvatiKredite();
                             <td>{kredit.vrsta_Kredita}</td>
                             <td>{kredit.sifra_Kredita}</td>
                             <td className="centar">
-                                <Link to={RoutesNames.KREDITI_NOVI} className="btn btn-success gumb">
+                                <Link to={RoutesNames.KREDITI_NOVI} className="btn btn-success gumb2">
                                 <IoIosAdd
                                 size={25}
                                 /> Dodaj
                                 </Link>
                                 &nbsp;&nbsp;&nbsp;
-                                <Button
-                                variant="danger"
-                                onClick={()=>obrisiKredit (kredit.sifra_Kredit)}
+                                <Button 
+                                variant="danger gumb2"
+                                onClick={()=>obrisiKredit (kredit.sifra_Kredita)}
                                 >
-                                    <MdDelete
+                                    <MdDelete  
                                     size={25} 
                                     />Obriši
                                 </Button>
