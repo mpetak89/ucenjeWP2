@@ -19,8 +19,21 @@ async function obrisiKredit (sifra_Kredita){
         console.log(e);
     });
 }
-    
+  
+async function dodajKredit (kredit){
+const odgovor = await httpService.post ('/Kredit', kredit)
+.then (()=>{
+    return{ok:true, poruka: 'Dodan kredit'}  
+})
+.catch((e)=>{
+    console.log(e.response.data.errors.Naziv);
+    return {ok: false, poruka:e.response.data.errors.Naziv}
+});
+return odgovor;
+}
+
 export default{
     getKrediti,
     obrisiKredit,
+    dodajKredit,
 };

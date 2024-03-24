@@ -9,6 +9,7 @@ namespace Banka.Models
         /// primarni ključ u bazi
         /// </summary>
 
+        [Required(ErrorMessage="Obavezan unos")]
         [Key]
         public int Sifra_Kredita { get; set; }
 

@@ -25,7 +25,7 @@ useEffect(()=>{dohvatiKredite();
 async function obrisiKredit (sifra_Kredita){
     const odgovor = await Kreditiservice.obrisiKredit(sifra_Kredita);
     if (odgovor.ok) {
-console.log (odgovor.poruka);
+alert (odgovor.poruka.data.poruka);
 dohvatiKredite();
     }
 }
@@ -39,17 +39,17 @@ dohvatiKredite();
             </Link>
     <Table striped bordered hover responsive>
         <thead>
-            <tr>
-                <th>vrsta_Kredita</th>
-                <th>sifra_Kredit</th>
+            <tr className="centar">
+                <th>Vrsta Kredita</th>
+                <th>Šifra Kredita</th>
                 <th>Akcija</th>
             </tr>
         </thead>
         <tbody>
                     {Krediti && Krediti.map((kredit, index)=>(
                         <tr key = {index}>
-                            <td>{kredit.vrsta_Kredita}</td>
-                            <td>{kredit.sifra_Kredita}</td>
+                            <td td className="centar">{kredit.vrsta_Kredita}</td>
+                            <td className="centar">{kredit.sifra_Kredita}</td>
                             <td className="centar">
                                 <Link to={RoutesNames.KREDITI_NOVI} className="btn btn-success gumb2">
                                 <IoIosAdd

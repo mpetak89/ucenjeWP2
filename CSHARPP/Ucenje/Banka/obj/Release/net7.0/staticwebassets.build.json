@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LaKkwERx9U+QaySmmwdRx6LkFz/hLYz4tAp45zLxnOE=",
+  "Hash": "J6UV3WYvDIiaN1NOJnbZiVrwqRhkQ1ZrzeBAGxQXTDA=",
   "Source": "Banka",
   "BasePath": "_content/Banka",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-BZRRUB8W.js",
+      "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-BBquc91e.css",
       "SourceId": "Banka",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\",
       "BasePath": "_content/Banka",
-      "RelativePath": "assets/index-BZRRUB8W.js",
+      "RelativePath": "assets/index-BBquc91e.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -33,15 +33,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\index-BZRRUB8W.js"
+      "OriginalItemSpec": "wwwroot\\assets\\index-BBquc91e.css"
     },
     {
-      "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-Cle_jBCL.css",
+      "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-C90CjW-u.js",
       "SourceId": "Banka",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\",
       "BasePath": "_content/Banka",
-      "RelativePath": "assets/index-Cle_jBCL.css",
+      "RelativePath": "assets/index-C90CjW-u.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -52,7 +52,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\index-Cle_jBCL.css"
+      "OriginalItemSpec": "wwwroot\\assets\\index-C90CjW-u.js"
     },
     {
       "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\favicon.ico",
