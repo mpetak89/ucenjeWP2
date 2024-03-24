@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Banka</name>
+    </assembly>
+    <members>
+        <member name="P:Banka.Models.Entitet.Sifra_Kredita">
+            <summary>
+            primarni ključ u bazi
+            </summary>
+        </member>
+    </members>
+</doc>

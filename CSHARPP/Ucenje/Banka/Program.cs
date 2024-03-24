@@ -7,7 +7,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(sgo =>
 { 
@@ -26,7 +25,10 @@ var o = new Microsoft.OpenApi.Models.OpenApiInfo()
         Name = "Edukacijska licenca"
     }
 };
-sgo.SwaggerDoc("v1", o);
+
+
+
+    sgo.SwaggerDoc("v1", o);
 
 
 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
@@ -34,6 +36,8 @@ var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
 sgo.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
 
 });
+
+
 
 builder.Services.AddCors(opcije =>
 {
@@ -52,7 +56,6 @@ builder.Services.AddDbContext<BankaContext>(o =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -61,12 +64,22 @@ var app = builder.Build();
         opcije.ConfigObject.
         AdditionalItems.Add("requestSnippetsEnabled", true);
     });
+    //}
+
+    app.UseHttpsRedirection();
+
+    app.UseAuthorization();
+
+    app.MapControllers();
+    app.UseStaticFiles();
+
+    app.UseCors("CorsPolicy"); 
+
+    app.UseDefaultFiles();
+    app.UseDeveloperExceptionPage();
+    app.MapFallbackToFile("index.html");
+    app.Run();
 }
 
-app.UseHttpsRedirection();
 
-app.UseAuthorization();
 
-app.MapControllers();
-
-app.Run();
