@@ -6,12 +6,21 @@ async function getKrediti (){
     .then((res)=>{
         if(App.DEV) console.table(res.data);
         return res;
-    }).catch((e)=>{console.log(e);
+    }).catch((e)=>{
+        console.log(e);
     });
+}
+
+    async function obrisiKredit (sifra_kredita){
+        return await httpService.delete('/Kredit/'+ sifra_kredita)
+        .then((res)=>{ 
+            return {ok: true, poruka: res};
+        }).catch((e)=>{
+            console.log(e);
+        });
     }
     
-
 export default{
     getKrediti,
-
+    obrisiKredit,
 };

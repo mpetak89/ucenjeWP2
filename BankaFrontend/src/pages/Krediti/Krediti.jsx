@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Table } from "react-bootstrap";
+import { Button, Container, Table } from "react-bootstrap";
 import Kreditiservice from "../../services/KreditiService";
 import {GrValidate} from "react-icons/gr";
 import {IoIosAdd} from "react-icons/io";
@@ -22,6 +22,14 @@ async function dohvatiKredite (){
 useEffect(()=>{dohvatiKredite();
 },[]);
 
+async function obrisiKredit (sifra_Kredit){
+    const odgovor = await Kreditiservice.obrisiKredit(sifra_Kredit);
+    if (odgovor.ok) {
+console.log (odgovor.poruka);
+dohvatiKredite();
+    }
+}
+
     return(
         <Container>
             <Link to={RoutesNames.KREDITI_NOVI} className="btn btn-success gumb">
@@ -43,21 +51,22 @@ useEffect(()=>{dohvatiKredite();
                             <td>{kredit.vrsta_Kredita}</td>
                             <td>{kredit.sifra_Kredita}</td>
                             <td className="centar">
-                                <td>
-                                <Link to={RoutesNames.KREDITI_PROMIJENI} className="btn btn-success gumb">
+                                <Link to={RoutesNames.KREDITI_NOVI} className="btn btn-success gumb">
                                 <IoIosAdd
                                 size={25}
                                 /> Dodaj
                                 </Link>
                                 &nbsp;&nbsp;&nbsp;
-                                <Link>
-                                <MdDelete
-                                size={25}
-                                /> Obriši
-                                </Link>
-                                </td>
-                            </td>
-                        </tr>
+                                <Button
+                                variant="danger"
+                                onClick={()=>obrisiKredit (kredit.sifra_Kredit)}
+                                >
+                                    <MdDelete
+                                    size={25} 
+                                    />Obriši
+                                </Button>
+                                 </td>
+                                                    </tr>
                              ))}
                                       </tbody>
     </Table>
