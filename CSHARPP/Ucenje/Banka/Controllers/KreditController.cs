@@ -16,7 +16,7 @@ namespace Banka.Controllers
     {
         private readonly BankaContext _context;
 
-        public KreditController (BankaContext context)
+        public KreditController(BankaContext context)
         {
             _context = context;
 
@@ -37,40 +37,42 @@ namespace Banka.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            if (!ModelState.IsValid) 
-            { 
-            return BadRequest(ModelState);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
             }
             try
             {
-                var Krediti = _context.Krediti.ToList ();
-                if (Krediti==null|| Krediti.Count==0)
-                { 
-                    return new EmptyResult(); 
+                var Krediti = _context.Krediti.ToList();
+                if (Krediti == null || Krediti.Count == 0)
+                {
+                    return new EmptyResult();
                 }
-                return new JsonResult (Krediti);
-            }catch (Exception ex) 
-            
+                return new JsonResult(Krediti);
+            }
+            catch (Exception ex)
+
             {
-                return StatusCode(StatusCodes.Status503ServiceUnavailable);
+                return StatusCode(StatusCodes.Status503ServiceUnavailable, ex.Message);
             }
 
-            
+
         }
         [HttpPost]
-        public IActionResult Post (Kredit Krediti)
+        public IActionResult Post(Kredit Krediti)
         {
-            if (!ModelState.IsValid || Krediti  == null) 
+            if (!ModelState.IsValid || Krediti == null)
             {
                 return BadRequest();
             }
             try
             {
-                _context.Krediti.Add (Krediti);
+                _context.Krediti.Add(Krediti);
                 _context.SaveChanges();
                 return StatusCode(StatusCodes.Status201Created, Krediti);
-                
-            }catch (Exception ex) 
+
+            }
+            catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status503ServiceUnavailable, ex.Message);
             }
@@ -78,31 +80,31 @@ namespace Banka.Controllers
         [HttpPut]
         [Route("{sifra_kredita:int}")]
 
-        public IActionResult Put (int sifra_kredita, Kredit Kredit)
+        public IActionResult Put(int sifra_kredita, Kredit Kredit)
         {
-            if (sifra_kredita<=0 || !ModelState.IsValid || Kredit == null)
+            if (sifra_kredita <= 0 || !ModelState.IsValid || Kredit == null)
             {
                 return BadRequest();
             }
             try
-            { 
-            var kreditizbaze = _context.Krediti.Find(sifra_kredita);
-           if (kreditizbaze == null)    
+            {
+                var kreditizbaze = _context.Krediti.Find(sifra_kredita);
+                if (kreditizbaze == null)
                 {
-                return BadRequest();
+                    return BadRequest();
                 }
-            kreditizbaze.Vrsta_Kredita = Kredit.Vrsta_Kredita;
-            _context.Krediti.Update(kreditizbaze);
-            _context.SaveChanges ();
-            return StatusCode (StatusCodes.Status200OK, kreditizbaze );
-        }
-        catch (Exception ex) 
+                kreditizbaze.Vrsta_Kredita = Kredit.Vrsta_Kredita;
+                _context.Krediti.Update(kreditizbaze);
+                _context.SaveChanges();
+                return StatusCode(StatusCodes.Status200OK, kreditizbaze);
+            }
+            catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status503ServiceUnavailable, ex.Message);
-    }
-           
+            }
 
-}
+
+        }
         [HttpDelete]
         [Route("{sifra_kredita:int}")]
         [Produces("application/json")]
@@ -141,7 +143,7 @@ namespace Banka.Controllers
 
 
 
-            }
+        }
 
 
 

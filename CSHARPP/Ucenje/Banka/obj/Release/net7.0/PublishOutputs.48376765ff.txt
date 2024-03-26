@@ -2,7 +2,6 @@ C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\Banka\obj\Release\ne
 C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\Banka\obj\Release\net7.0\PubTmp\Out\appsettings.Development.json
 C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\Banka\obj\Release\net7.0\PubTmp\Out\appsettings.json
 C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\Banka\obj\Release\net7.0\PubTmp\Out\Banka.dll
-C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\Banka\obj\Release\net7.0\PubTmp\Out\Banka.deps.json
 C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\Banka\obj\Release\net7.0\PubTmp\Out\Banka.runtimeconfig.json
 C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\Banka\obj\Release\net7.0\PubTmp\Out\Banka.pdb
 C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\Banka\obj\Release\net7.0\PubTmp\Out\AutoMapper.dll
@@ -54,3 +53,4 @@ C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\Banka\obj\Release\ne
 C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\Banka\obj\Release\net7.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\Banka\obj\Release\net7.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\Banka\obj\Release\net7.0\PubTmp\Out\Banka.xml
+C:\Users\Korisnik\Documents\GitHub\ucenjeWP2\CSHARPP\Ucenje\Banka\obj\Release\net7.0\PubTmp\Out\Banka.deps.json

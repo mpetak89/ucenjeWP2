@@ -11,7 +11,9 @@ namespace Banka.Models
 
         [Required(ErrorMessage="Obavezan unos")]
         [Key]
+
         public int Sifra_Kredita { get; set; }
+
 
 
 

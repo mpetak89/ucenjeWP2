@@ -26,8 +26,8 @@ const odgovor = await httpService.post ('/Kredit', kredit)
     return{ok:true, poruka: 'Dodan kredit'}  
 })
 .catch((e)=>{
-    console.log(e.response.data.errors.Naziv);
-    return {ok: false, poruka:e.response.data.errors.Naziv}
+    console.log(e.response.data.errors);
+    return {ok: false,  poruka: 'Greška, kredit nije dodan'}
 });
 return odgovor;
 }

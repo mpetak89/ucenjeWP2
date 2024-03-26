@@ -42,15 +42,21 @@ dohvatiKredite();
             <tr className="centar">
                 <th>Vrsta Kredita</th>
                 <th>Šifra Kredita</th>
+                <th>Valuta Kredita</th>
+                <th>Vrsta Kamate</th>
+                <th>Osiguranje Kredita</th>
                 <th>Akcija</th>
             </tr>
         </thead>
         <tbody>
                     {Krediti && Krediti.map((kredit, index)=>(
                         <tr key = {index}>
-                            <td td className="centar">{kredit.vrsta_Kredita}</td>
+                            <td className="centar">{kredit.vrsta_Kredita}</td>
                             <td className="centar">{kredit.sifra_Kredita}</td>
-                            <td className="centar">
+                            <td className="centar">{kredit.valuta_kredita}</td>
+                            <td className="centar">{kredit.vrsta_kamate}</td>
+                            <td className="centar">{kredit.osiguranje_kredita}</td>
+                                                        <td className="centar">
                                 <Link to={RoutesNames.KREDITI_NOVI} className="btn btn-success gumb2">
                                 <IoIosAdd
                                 size={25}

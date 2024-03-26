@@ -22,17 +22,22 @@ export default function KreditiDodaj (){
 
         const kredit =
         {
-            sifra_Kredita: parseInt(podaci.get('sifra')),
-            vrsta_Kredita: podaci.get ('naziv')
+            sifra_kredita: parseInt(podaci.get('šifra')),
+            vrsta_Kredita: podaci.get ('naziv'),
+            vrsta_Kamate: podaci.get ('kamata'),
+            valuta_kredita: podaci.get ("valuta"),
+            osiguranje_kredita: podaci.get('osgiruranje')=='on'? true:false
         };
 
-            dodajKredit(kredit);
+        dodajKredit(kredit);
+            
              
     }
     return(
         <Container>
 
 <Form onSubmit = {handleSubmit}>
+
 <Form.Group controlId ="sifra">
         <Form.Label>Šifra kredita</Form.Label>
         <Form.Control 
@@ -49,20 +54,46 @@ name="naziv"
 />
     </Form.Group>
 
-<Row className="akcije">
-<Col>
-<Link
-className="btn btn-danger" to ={RoutesNames.KREDITI_PREGLED}>Odustani</Link>
-</Col>
-<Col>
-<Button
- variant="primary"
- type="submit"
->Dodaj Kredit
-</Button>
-</Col>
-</Row>
-    </Form>
+    <Form.Group controlId ="kamata">
+        <Form.Label>Vrsta kamate</Form.Label>
+        <Form.Control 
+type="text"
+name="kamata" 
+/>
+    </Form.Group>
+
+    <Form.Group controlId ="valuta">
+        <Form.Label>Valuta kredita</Form.Label>
+        <Form.Control 
+type="text"
+name="valuta" 
+/>
+    </Form.Group>
+
+    <Form.Group controlId ="osiguranje">
+        <Form.Check 
+        label="Osiguranje kredita"
+inline
+name="Osiguran" 
+/>
+    </Form.Group>
+
+    <Row className="akcije">
+                    <Col>
+                        <Link 
+                        className="btn btn-danger"
+                        to={RoutesNames.KREDITI_PREGLED}>Odustani</Link>
+                    </Col>
+                    <Col>
+                        <Button
+                            variant="primary"
+                            type="submit"
+                        >
+                            Dodaj kredit
+                        </Button>
+                    </Col>
+                </Row>
+         </Form>
         </Container>
     );
-    }
+}
