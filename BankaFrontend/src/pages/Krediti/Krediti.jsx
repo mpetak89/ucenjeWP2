@@ -29,6 +29,11 @@ alert (odgovor.poruka.data.poruka);
 dohvatiKredite();
     }
 }
+function osiguranje (kredit){
+    if (kredit.osiguranje_kredita==true) return 'ima';
+return 'nema';
+}
+
 
     return(
         <Container>
@@ -55,8 +60,9 @@ dohvatiKredite();
                             <td className="centar">{kredit.sifra_Kredita}</td>
                             <td className="centar">{kredit.valuta_kredita}</td>
                             <td className="centar">{kredit.vrsta_kamate}</td>
-                            <td className="centar">{kredit.osiguranje_kredita}</td>
-                                                        <td className="centar">
+                            <td className="centar">{osiguranje(kredit)}</td>
+
+                            <td className="centar">
                                 <Link to={RoutesNames.KREDITI_NOVI} className="btn btn-success gumb2">
                                 <IoIosAdd
                                 size={25}

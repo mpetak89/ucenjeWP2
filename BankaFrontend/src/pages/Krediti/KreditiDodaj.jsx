@@ -22,7 +22,6 @@ export default function KreditiDodaj (){
 
         const kredit =
         {
-            sifra_kredita: parseInt(podaci.get('šifra')),
             vrsta_Kredita: podaci.get ('naziv'),
             vrsta_Kamate: podaci.get ('kamata'),
             valuta_kredita: podaci.get ("valuta"),
