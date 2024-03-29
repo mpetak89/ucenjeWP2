@@ -11,7 +11,11 @@ use banka;
 
 create table krediti(
 sifra_kredita int not null primary key,
-vrsta_kredita varchar (100) not null);
+vrsta_kredita varchar (100) not null,
+valuta_kredita varchar (30) not null,
+vrsta_kamate varchar (30) not null,
+osiguranje_kredita bit not null);
+
 
 create table komitenti (
 sifra_komitenta int not null primary key identity(100,1),
@@ -28,15 +32,14 @@ datum_podizanja date not null,
 datum_vracanja date,
 iznos decimal(16,2),
 kamata decimal (9,4),
-sifra_kredita int foreign key references krediti(sifra_kredita),
+sifra_kredita int foreign key references krediti (sifra_kredita),
 sifra_komitenta int foreign key references komitenti (sifra_komitenta));
 
-insert into krediti values (1125, 'kratkoročni')
-insert into krediti values (1126, 'stambeni')
-insert into krediti values (1127, 'hipotekarni')
-insert into krediti values (1128, 'nenamjenski')
+insert into krediti values (1125, 'kratkoročni', 'EUR', 'fiksna', 0)
+insert into krediti values (1126, 'stambeni', 'CHF', 'varijabilna', 1)
+insert into krediti values (1127, 'hipotekarni', 'USD', 'fiksna', 1)
+insert into krediti values (1128, 'nenamjenski', 'EUR', 'fiksna', 0)
 
-select*from krediti
 
 insert into komitenti values ('01884354741', 'Jelena', 'Beštek',' 1976-07-01', 'Mišinačka 7, Brezovac','Bjelovar')
 insert into komitenti values ('51532807967', 'Ankica', 'Petak',' 1963-12-27', 'Mišinačka 5, Brezovac','Bjelovar')

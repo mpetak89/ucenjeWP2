@@ -22,10 +22,11 @@ export default function KreditiDodaj (){
 
         const kredit =
         {
-            vrsta_Kredita: podaci.get ('naziv'),
-            vrsta_Kamate: podaci.get ('kamata'),
-            valuta_kredita: podaci.get ("valuta"),
-            osiguranje_kredita: podaci.get('osgiruranje')=='on'? true:false
+            sifra_kredita:parseInt(podaci.get('sifra_kredita')),
+            Vrsta_Kredita: podaci.get ('Vrsta_Kredita'),
+            vrsta_kamate: podaci.get ('vrsta_kamate'),
+            valuta_kredita: podaci.get ('valuta_kredita'),
+            osiguranje_kredita: podaci.get('osiguranje_kredita')=='on'? true:false
         };
 
         dodajKredit(kredit);
@@ -37,7 +38,7 @@ export default function KreditiDodaj (){
 
 <Form onSubmit = {handleSubmit}>
 
-<Form.Group controlId ="sifra">
+<Form.Group controlId ="sifra_kredita">
         <Form.Label>Šifra kredita</Form.Label>
         <Form.Control 
 type="number"
@@ -45,7 +46,7 @@ name="sifra"
 />
     </Form.Group>
 
-    <Form.Group controlId ="naziv">
+    <Form.Group controlId ="vrsta_kredita">
         <Form.Label>Vrsta kredita</Form.Label>
         <Form.Control 
 type="text"
@@ -53,7 +54,7 @@ name="naziv"
 />
     </Form.Group>
 
-    <Form.Group controlId ="kamata">
+    <Form.Group controlId ="vrsta_kamate">
         <Form.Label>Vrsta kamate</Form.Label>
         <Form.Control 
 type="text"
@@ -61,7 +62,7 @@ name="kamata"
 />
     </Form.Group>
 
-    <Form.Group controlId ="valuta">
+    <Form.Group controlId ="valuta_kredita">
         <Form.Label>Valuta kredita</Form.Label>
         <Form.Control 
 type="text"
@@ -69,7 +70,7 @@ name="valuta"
 />
     </Form.Group>
 
-    <Form.Group controlId ="osiguranje">
+    <Form.Group controlId ="osiguranje_kredita">
         <Form.Check 
         label="Osiguranje kredita"
 inline
