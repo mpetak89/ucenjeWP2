@@ -6,3 +6,6 @@ export const httpService = axios.create({
         'Content-Type': 'application/json'
     }
 });
+function kreirajPoruku(svojstvo, poruka){
+    return {svojstvo: svojstvo, poruka: poruka};
+}

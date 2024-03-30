@@ -109,12 +109,12 @@ namespace Banka.Controllers
                 }
 
                 entitetIzBaze.sifra_komitenta = entitet.sifra_komitenta;
-                entitetIzBaze.Oib = entitet.Oib;
-                entitetIzBaze.Ime = entitet.Ime;
-                entitetIzBaze.Prezime = entitet.Prezime;
-                entitetIzBaze.Datum_rodenja = entitet.Datum_rodenja;
-                entitetIzBaze.Ulica_stanovanja = entitet.Ulica_stanovanja;
-                entitetIzBaze.Grad_stanovanja = entitet.Grad_stanovanja;
+                entitetIzBaze.oib = entitet.oib;
+                entitetIzBaze.ime = entitet.ime;
+                entitetIzBaze.prezime = entitet.prezime;
+                entitetIzBaze.datum_rodenja = entitet.datum_rodenja;
+                entitetIzBaze.ulica_stanovanja = entitet.ulica_stanovanja;
+                entitetIzBaze.grad_stanovanja = entitet.grad_stanovanja;
 
                 _context.Komitenti.Update(entitetIzBaze);
                 _context.SaveChanges();

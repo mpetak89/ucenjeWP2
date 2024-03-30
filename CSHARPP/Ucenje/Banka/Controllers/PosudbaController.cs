@@ -43,30 +43,6 @@ namespace Banka.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("{sifra:int}")]
-        public IActionResult GetBySifra(int sifra)
-        {
-
-            if (!ModelState.IsValid || sifra <= 0)
-            {
-                return BadRequest(ModelState);
-            }
-            try
-            {
-                var komitent = _context.Posudbe.Find(sifra);
-                if (komitent == null)
-                {
-                    return new EmptyResult();
-                }
-                return new JsonResult(komitent);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status503ServiceUnavailable,
-                    ex.Message);
-            }
-        }
 
 
         [HttpPost]
@@ -108,11 +84,11 @@ namespace Banka.Controllers
                     return StatusCode(StatusCodes.Status204NoContent, sifra);
                 }
 
-                entitetIzBaze.Sifra_Posudbe = entitet.Sifra_Posudbe;
-                entitetIzBaze.Datum_podizanja = entitet.Datum_podizanja;
-                entitetIzBaze.Datum_Vracanja = entitet.Datum_podizanja;
-                entitetIzBaze.Iznos = entitet.Iznos;
-                entitetIzBaze.Kamata = entitet.Kamata;
+                entitetIzBaze.sifra_posudbe = entitet.sifra_posudbe;
+                entitetIzBaze.datum_podizanja = entitet.datum_podizanja;
+                entitetIzBaze.datum_vracanja = entitet.datum_vracanja;
+                entitetIzBaze.iznos = entitet.iznos;
+                entitetIzBaze.kamata = entitet.kamata;
 
                 _context.Posudbe.Update(entitetIzBaze);
                 _context.SaveChanges();

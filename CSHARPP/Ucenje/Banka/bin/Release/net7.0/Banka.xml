@@ -4,7 +4,15 @@
         <name>Banka</name>
     </assembly>
     <members>
-        <member name="P:Banka.Models.Entitet.Sifra_Kredita">
+        <member name="M:Banka.Controllers.KreditController.Get">
+            <summary>
+            Dohvaća sve kredite
+            </summary>
+            <response code="200">Sve OK, ako nema podataka content-length: 0 </response>
+            <response code="400">Zahtjev nije valjan</response>
+            <response code="503">Baza na koju se spajam nije dostupna</response>
+        </member>
+        <member name="P:Banka.Models.Entitet.sifra_kredita">
             <summary>
             primarni ključ u bazi
             </summary>

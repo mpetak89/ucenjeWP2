@@ -16,24 +16,14 @@ namespace Banka.Controllers
     {
         private readonly BankaContext _context;
 
-        public KreditController(BankaContext context)
-        {
-            _context = context;
+        public KreditController(BankaContext context) => _context = context;
+        /// <summary>
+       /// Dohvaća sve kredite
+       /// </summary>
+       /// <response code="200">Sve OK, ako nema podataka content-length: 0 </response>
+       /// <response code="400">Zahtjev nije valjan</response>
+       /// <response code="503">Baza na koju se spajam nije dostupna</response>
 
-            /// <summary>
-            /// Dohvaća sve smjerove iz baze
-            /// </summary>
-            /// <remarks>
-            /// Primjer upita
-            /// 
-            ///    GET api/v1/Smjer
-            ///    
-            /// </remarks>
-            /// <returns>Smjerovi u bazi</returns>
-            /// <response code="200">Sve OK, ako nema podataka content-length: 0 </response>
-            /// <response code="400">Zahtjev nije valjan</response>
-            /// <response code="503">Baza na koju se spajam nije dostupna</response>
-        }
         [HttpGet]
         public IActionResult Get()
         {
@@ -58,6 +48,32 @@ namespace Banka.Controllers
 
 
         }
+        [HttpGet]
+        [Route("sifra:int")]
+        public IActionResult GetBySifra(int sifra)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            try
+            {
+                var kredit= _context.Krediti.Find(sifra);
+                if (kredit == null)
+                {
+                    return new EmptyResult();
+                }
+                return new JsonResult(kredit);
+            }
+            catch (Exception ex)
+
+            {
+                return StatusCode(StatusCodes.Status503ServiceUnavailable, ex.Message);
+            }
+
+
+        }
+
         [HttpPost]
         public IActionResult Post(Kredit Krediti)
         {
@@ -93,7 +109,7 @@ namespace Banka.Controllers
                 {
                     return BadRequest();
                 }
-                kreditizbaze.Vrsta_Kredita = Kredit.Vrsta_Kredita;
+                kreditizbaze.vrsta_kredita = Kredit.vrsta_kredita;
                 _context.Krediti.Update(kreditizbaze);
                 _context.SaveChanges();
                 return StatusCode(StatusCodes.Status200OK, kreditizbaze);

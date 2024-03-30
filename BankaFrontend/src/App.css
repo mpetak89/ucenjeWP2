@@ -9,6 +9,10 @@
     width: 25%;
     margin: 4px;
 }
+.gumb3{
+    width: 20%;
+    margin: 4px;
+}
 .btn-success {
     background-color: rgba(158, 212, 158, 0.905) !important;
 }

@@ -3,13 +3,14 @@ import { Button, Container, Table } from "react-bootstrap";
 import Kreditiservice from "../../services/KreditiService";
 import {GrValidate} from "react-icons/gr";
 import {IoIosAdd} from "react-icons/io";
-import { Link, Routes } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RoutesNames } from "../../constants";
 import { MdDelete } from "react-icons/md";
-
+import { FaEdit } from "react-icons/fa";
 
 export default function Krediti (){
 const [Krediti, setKrediti] = useState();
+const navigate = useNavigate();
 
 async function dohvatiKredite (){
     await Kreditiservice.getKrediti()
@@ -22,8 +23,8 @@ async function dohvatiKredite (){
 useEffect(()=>{dohvatiKredite();
 },[]);
 
-async function obrisiKredit (sifra_Kredita){
-    const odgovor = await Kreditiservice.obrisiKredit(sifra_Kredita);
+async function obrisiKredit (sifra_kredita){
+    const odgovor = await Kreditiservice.obrisiKredit(sifra_kredita);
     if (odgovor.ok) {
 alert (odgovor.poruka.data.poruka);
 dohvatiKredite();
@@ -56,8 +57,8 @@ return 'nema';
         <tbody>
                     {Krediti && Krediti.map((kredit, index)=>(
                         <tr key = {index}>
-                            <td className="centar">{kredit.vrsta_Kredita}</td>
-                            <td className="centar">{kredit.sifra_Kredita}</td>
+                            <td className="centar">{kredit.vrsta_kredita}</td>
+                            <td className="centar">{kredit.sifra_kredita}</td>
                             <td className="centar">{kredit.valuta_kredita}</td>
                             <td className="centar">{kredit.vrsta_kamate}</td>
                             <td className="centar">{osiguranje(kredit)}</td>
@@ -71,16 +72,24 @@ return 'nema';
                                 &nbsp;&nbsp;&nbsp;
                                 <Button 
                                 variant="danger gumb2"
-                                onClick={()=>obrisiKredit (kredit.sifra_Kredita)}
+                                onClick={()=>obrisiKredit (kredit.sifra_kredita)}
                                 >
                                     <MdDelete  
                                     size={25} 
                                     />Obriši
+                                    </Button>
+                                <Button
+                                variant="primary"
+                                onClick={()=>{navigate(`/krediti/${kredit.sifra_kredita}`)}}> 
+                                <FaEdit
+                                size={18}
+                                /> Promijeni
                                 </Button>
                                  </td>
                                                     </tr>
                              ))}
                                       </tbody>
+
     </Table>
                 </Container>
 
