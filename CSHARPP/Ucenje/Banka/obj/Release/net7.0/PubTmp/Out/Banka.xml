@@ -17,5 +17,25 @@
             primarni ključ u bazi
             </summary>
         </member>
+        <member name="P:Banka.Models.Kredit.vrsta_kredita">
+            <summary>
+            Vrsta kredita
+            </summary>
+        </member>
+        <member name="P:Banka.Models.Kredit.valuta_kredita">
+            <summary>
+            Valuta kredita
+            </summary>
+        </member>
+        <member name="P:Banka.Models.Kredit.vrsta_kamate">
+            <summary>
+            Vrsta kamate
+            </summary>
+        </member>
+        <member name="P:Banka.Models.Kredit.osiguranje_kredita">
+            <summary>
+            Osiguranje kredita
+            </summary>
+        </member>
     </members>
 </doc>

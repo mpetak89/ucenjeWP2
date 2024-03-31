@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Col, Container, Row, Form } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import KreditiService from "../../services/KreditiService";
 import { RoutesNames } from "../../constants";
@@ -11,7 +11,7 @@ export default function KreditiPromijeni (){
     const routeParams = useParams();
     const [kredit, setKredit] = useState({});
 
-    async function dohvatiKredite(){
+    async function dohvatiKredit(){
         await KreditiService.getBySifra(routeParams.sifra_kredita)
        .then((res)=>{
         setKredit(res.data)
@@ -21,16 +21,17 @@ export default function KreditiPromijeni (){
     });
 }
 useEffect(()=>{
-    dohvatiKredite();
+    dohvatiKredit();
 },[]);
 
-async function promijeniKredit(sifra_kredita, kredit){
+async function promijeniKredit(kredit){
     const odgovor = await KreditiService.promijeniKredit(routeParams.sifra_kredita,kredit);
     if(odgovor.ok){
       navigate(RoutesNames.KREDITI_PREGLED);
-      es;
-    }
-    alert(dohvatiPorukeAlert(odgovor.podaci));
+          }else{
+            console.log (odgovor);
+    alert(odgovor.poruka);
+}
 }
 
 function handleSubmit (e){
@@ -57,7 +58,7 @@ const kredit =
         <Form.Group controlId ="sifra_kredita">
                 <Form.Label>Šifra kredita</Form.Label>
                 <Form.Control 
-        type="number"
+        type="text"
         defaultValue={kredit.sifra_kredita}
         name="sifra" 
         />

@@ -6,7 +6,7 @@
     <members>
         <member name="M:Banka.Controllers.KreditController.Get">
             <summary>
-            Dohvaća sve smjerove iz baze
+            Dohvaća sve kredite
             </summary>
             <response code="200">Sve OK, ako nema podataka content-length: 0 </response>
             <response code="400">Zahtjev nije valjan</response>
@@ -15,6 +15,26 @@
         <member name="P:Banka.Models.Entitet.sifra_kredita">
             <summary>
             primarni ključ u bazi
+            </summary>
+        </member>
+        <member name="P:Banka.Models.Kredit.vrsta_kredita">
+            <summary>
+            Vrsta kredita
+            </summary>
+        </member>
+        <member name="P:Banka.Models.Kredit.valuta_kredita">
+            <summary>
+            Valuta kredita
+            </summary>
+        </member>
+        <member name="P:Banka.Models.Kredit.vrsta_kamate">
+            <summary>
+            Vrsta kamate
+            </summary>
+        </member>
+        <member name="P:Banka.Models.Kredit.osiguranje_kredita">
+            <summary>
+            Osiguranje kredita
             </summary>
         </member>
     </members>

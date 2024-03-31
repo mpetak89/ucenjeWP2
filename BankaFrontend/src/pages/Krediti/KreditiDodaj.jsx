@@ -7,23 +7,26 @@ export default function KreditiDodaj (){
     const navigate = useNavigate(); 
 
     async function dodajKredit(kredit){
-        const odgovor = await KreditiService.dodajKredit(kredit); 
+        const odgovor = await KreditiService.dodajKredit(kredit);
         if(odgovor.ok){
           navigate(RoutesNames.KREDITI_PREGLED);
-          return
-        }alert(dohvatiPorukeAlert(odgovor.podaci));
+        }else{
+          console.log(odgovor);
+          alert(odgovor.poruka);
+        }
     }
 
-    function handleSubmit (e){
+    function handleSubmit(e){
         e.preventDefault();
-        const podaci = new FormData (e.target);
+        const podaci = new FormData(e.target);
+
 
         const kredit =
         {
             sifra_kredita: parseInt (podaci.get('sifra_kredita')),
             vrsta_kredita: podaci.get ('vrsta_kredita'),
-            vrsta_kamate: podaci.get ('vrsta_kamate'),
             valuta_kredita: podaci.get ('valuta_kredita'),
+            vrsta_kamate: podaci.get ('vrsta_kamate'),
             osiguranje_kredita: podaci.get('osiguranje_kredita')=='on'? true:false
         };
 
@@ -39,7 +42,7 @@ export default function KreditiDodaj (){
 <Form.Group controlId ="sifra_kredita">
         <Form.Label>Šifra kredita</Form.Label>
         <Form.Control 
-type="number"
+type="text"
 name="sifra" 
 />
     </Form.Group>

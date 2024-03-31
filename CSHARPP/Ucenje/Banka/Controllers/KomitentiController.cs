@@ -43,30 +43,30 @@ namespace Banka.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("{sifra:int}")]
-        public IActionResult GetBySifra(int sifra)
-        {
+        //[HttpGet]
+        //[Route("{sifra:int}")]
+        //public IActionResult GetBySifra(int sifra)
+        //{
 
-            if (!ModelState.IsValid || sifra <= 0)
-            {
-                return BadRequest(ModelState);
-            }
-            try
-            {
-                var komitent = _context.Komitenti.Find(sifra);
-                if (komitent == null)
-                {
-                    return new EmptyResult();
-                }
-                return new JsonResult(komitent);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status503ServiceUnavailable,
-                    ex.Message);
-            }
-        }
+        //    if (!ModelState.IsValid || sifra <= 0)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+        //    try
+        //    {
+        //        var komitent = _context.Komitenti.Find(sifra);
+        //        if (komitent == null)
+        //        {
+        //            return new EmptyResult();
+        //        }
+        //        return new JsonResult(komitent);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(StatusCodes.Status503ServiceUnavailable,
+        //            ex.Message);
+        //    }
+        //}
 
 
         [HttpPost]

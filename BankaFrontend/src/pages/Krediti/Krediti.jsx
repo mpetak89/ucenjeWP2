@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Container, Table } from "react-bootstrap";
-import Kreditiservice from "../../services/KreditiService";
+import KreditiService from "../../services/KreditiService";
 import {GrValidate} from "react-icons/gr";
 import {IoIosAdd} from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
@@ -9,22 +9,25 @@ import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 
 export default function Krediti (){
-const [Krediti, setKrediti] = useState();
+const [krediti, setKrediti] = useState();
 const navigate = useNavigate();
 
+
 async function dohvatiKredite (){
-    await Kreditiservice.getKrediti()
+    await KreditiService.getKrediti()
     .then ((res)=>{
         setKrediti(res.data);
     })
-    .catch ((e)=>{alert(e);
+    .catch ((e)=>    {
+        alert(e);
     });
 }
-useEffect(()=>{dohvatiKredite();
+useEffect(()=>{
+    dohvatiKredite();
 },[]);
 
 async function obrisiKredit (sifra_kredita){
-    const odgovor = await Kreditiservice.obrisiKredit(sifra_kredita);
+    const odgovor = await KreditiService.obrisiKredit(sifra_kredita);
     if (odgovor.ok) {
 alert (odgovor.poruka.data.poruka);
 dohvatiKredite();
@@ -55,7 +58,7 @@ return 'nema';
             </tr>
         </thead>
         <tbody>
-                    {Krediti && Krediti.map((kredit, index)=>(
+                    {krediti && krediti.map((kredit, index)=>(
                         <tr key = {index}>
                             <td className="centar">{kredit.vrsta_kredita}</td>
                             <td className="centar">{kredit.sifra_kredita}</td>
@@ -64,13 +67,21 @@ return 'nema';
                             <td className="centar">{osiguranje(kredit)}</td>
 
                             <td className="centar">
-                                <Link to={RoutesNames.KREDITI_NOVI} className="btn btn-success gumb2">
+                                <Link to={RoutesNames.KREDITI_NOVI} className="btn btn-success gumb2, centar">
                                 <IoIosAdd
                                 size={25}
                                 /> Dodaj
                                 </Link>
                                 &nbsp;&nbsp;&nbsp;
-                                <Button 
+                                <Button
+                                    variant="primary"
+                                    onClick={()=>{navigate(`/krediti/${kredit.sifra_kredita}`)}}>
+                                    <FaEdit
+                                    size={18}
+                                    /> Promijeni
+                                    </Button>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <Button 
                                 variant="danger gumb2"
                                 onClick={()=>obrisiKredit (kredit.sifra_kredita)}
                                 >
@@ -78,13 +89,7 @@ return 'nema';
                                     size={25} 
                                     />Obriši
                                     </Button>
-                                <Button
-                                variant="primary"
-                                onClick={()=>{navigate(`/krediti/${kredit.sifra_kredita}`)}}> 
-                                <FaEdit
-                                size={18}
-                                /> Promijeni
-                                </Button>
+                                                        
                                  </td>
                                                     </tr>
                              ))}
