@@ -12,5 +12,7 @@ namespace Banka.Models
         public DateTime? datum_rodenja { get; set; }
         public string? ulica_stanovanja { get; set; }
         public string? grad_stanovanja { get; set; }
+
+
     }
 }

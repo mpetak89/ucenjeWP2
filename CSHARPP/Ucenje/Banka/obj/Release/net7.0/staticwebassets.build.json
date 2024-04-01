@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OJZQ3IZp1y8M7ahkmSRHfdluxC6W6QutAFGjSwE1LrE=",
+  "Hash": "CtdS7JjFPixcd+9vnBcfMyQJlHvnMvtM7uj+n0Gg+9A=",
   "Source": "Banka",
   "BasePath": "_content/Banka",
   "Mode": "Default",
@@ -16,25 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-Bcj_gV-g.js",
-      "SourceId": "Banka",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\",
-      "BasePath": "_content/Banka",
-      "RelativePath": "assets/index-Bcj_gV-g.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\index-Bcj_gV-g.js"
-    },
     {
       "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-BwK8LXC3.css",
       "SourceId": "Banka",
@@ -53,6 +34,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\index-BwK8LXC3.css"
+    },
+    {
+      "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-PdMDXCGT.js",
+      "SourceId": "Banka",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\",
+      "BasePath": "_content/Banka",
+      "RelativePath": "assets/index-PdMDXCGT.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\index-PdMDXCGT.js"
     },
     {
       "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\favicon.ico",

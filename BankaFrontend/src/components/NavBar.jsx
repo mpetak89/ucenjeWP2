@@ -29,7 +29,9 @@ function NavBar() {
                 >
                 Krediti
                 </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item
+              onClick={()=>navigate(RoutesNames.KOMITENTI_PREGLED)}              
+                >
                 Komitenti
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">

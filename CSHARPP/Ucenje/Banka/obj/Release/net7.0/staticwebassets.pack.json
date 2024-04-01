@@ -1,12 +1,12 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-Bcj_gV-g.js",
-      "PackagePath": "staticwebassets\\assets\\index-Bcj_gV-g.js"
-    },
-    {
       "Id": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-BwK8LXC3.css",
       "PackagePath": "staticwebassets\\assets\\index-BwK8LXC3.css"
+    },
+    {
+      "Id": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-PdMDXCGT.js",
+      "PackagePath": "staticwebassets\\assets\\index-PdMDXCGT.js"
     },
     {
       "Id": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\favicon.ico",

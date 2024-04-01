@@ -1,7 +1,11 @@
 ﻿using Banka.Data;
+using Banka.Extension;
 using Banka.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using System.Text;
+
 
 namespace Banka.Controllers
 
@@ -37,7 +41,7 @@ namespace Banka.Controllers
                 {
                     return new EmptyResult();
                 }
-                return new JsonResult(krediti);
+                return new JsonResult(krediti.MapKreditReadList());
             }
             catch (Exception ex)
 
@@ -60,9 +64,10 @@ namespace Banka.Controllers
                 var kredit= _context.Krediti.Find(sifra_kredita);
                 if (kredit == null)
                 {
-                    return new EmptyResult();
+                    return BadRequest("Kredit pod šifrom " + sifra_kredita + " ne postoji");
+
                 }
-                return new JsonResult(kredit);
+                return new JsonResult(kredit.MapKreditReadToDTO());
             }
             catch (Exception ex)
 
@@ -74,19 +79,20 @@ namespace Banka.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Kredit kredit)
+        public IActionResult Post(KreditDTOInsertUpdate kreditDTO)
         {
-            if (!ModelState.IsValid || kredit == null)
+            if (!ModelState.IsValid || kreditDTO == null)
             {
                 return BadRequest();
             }
             try
             {
+                var kredit = kreditDTO.MapKreditInsertUpdateFromDTO();
                 _context.Krediti.Add(kredit);
                 _context.SaveChanges();
-                return StatusCode(StatusCodes.Status201Created, kredit);
-
-            }
+                return StatusCode(StatusCodes.Status201Created, 
+                    kredit.MapKreditReadToDTO());
+                            }
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status503ServiceUnavailable, ex.Message);
@@ -95,9 +101,9 @@ namespace Banka.Controllers
         [HttpPut]
         [Route("{sifra_kredita:int}")]
 
-        public IActionResult Put(int sifra_kredita, Kredit kredit)
+        public IActionResult Put(int sifra_kredita, KreditDTOInsertUpdate kreditDTO)
         {
-            if (sifra_kredita <= 0 || !ModelState.IsValid || kredit == null)
+            if (sifra_kredita <= 0 || !ModelState.IsValid || kreditDTO == null)
             {
                 return BadRequest();
             }
@@ -106,18 +112,16 @@ namespace Banka.Controllers
                 var kreditizbaze = _context.Krediti.Find(sifra_kredita);
                 if (kreditizbaze == null)
                 {
-                    return StatusCode(StatusCodes.Status204NoContent, sifra_kredita);
+                    return BadRequest("Ne postoji kredit pod šifrom " + sifra_kredita + " u bazi");
                 }
-                kreditizbaze.sifra_kredita = kredit.sifra_kredita;
-                kreditizbaze.vrsta_kredita = kredit.vrsta_kredita;
-                kreditizbaze.valuta_kredita = kredit.valuta_kredita;
-                kreditizbaze.vrsta_kamate = kredit.vrsta_kamate;
-                kreditizbaze.osiguranje_kredita = kredit.osiguranje_kredita;
 
-                _context.Krediti.Update(kreditizbaze);
+
+                var kredit=kreditDTO.MapKreditInsertUpdateFromDTO(kreditizbaze);
+                
+                _context.Krediti.Update(kredit); 
                 _context.SaveChanges();
 
-                return StatusCode(StatusCodes.Status200OK, kreditizbaze);
+                return StatusCode(StatusCodes.Status200OK, kredit.MapKreditReadToDTO());
             }
             catch (Exception ex)
             {

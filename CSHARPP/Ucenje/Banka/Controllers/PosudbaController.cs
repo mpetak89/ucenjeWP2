@@ -1,6 +1,7 @@
 ﻿using Banka.Data;
 using Banka.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace Banka.Controllers
@@ -29,7 +30,10 @@ namespace Banka.Controllers
             }
             try
             {
-                var lista = _context.Posudbe.ToList();
+                var lista = _context.Posudbe
+                    .Include(g=>g.sifra_kredita)
+                    .Include(g=>g.Komitent)
+                    .ToList();
                 if (lista == null || lista.Count == 0)
                 {
                     return new EmptyResult();

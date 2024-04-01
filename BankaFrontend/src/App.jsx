@@ -18,6 +18,10 @@ return(
     <Route path = {RoutesNames.KREDITI_PREGLED} element = {<Krediti/>}/>
     <Route path = {RoutesNames.KREDITI_NOVI} element = {<KreditiDodaj/>}/>
     <Route path = {RoutesNames.KREDITI_PROMIJENI} element = {<KreditiPromijeni/>}/>
+
+        {/* <Route path = {RoutesNames.KOMITENTI_PREGLED} element = {<Komitenti/>}/>
+    <Route path = {RoutesNames.KOMITENTI_NOVI} element = {<KomitentiDodaj/>}/>
+    <Route path = {RoutesNames.KOMITENTI_PROMIJENI} element = {<KomitentiPromijeni/>}/> */}
     </>
   </Routes> 
   </>

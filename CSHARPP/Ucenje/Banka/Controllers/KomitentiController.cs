@@ -43,30 +43,30 @@ namespace Banka.Controllers
             }
         }
 
-        //[HttpGet]
-        //[Route("{sifra:int}")]
-        //public IActionResult GetBySifra(int sifra)
-        //{
+        [HttpGet]
+        [Route("{sifra_komitenta:int}")]
+        public IActionResult GetBySifra(int sifra)
+        {
 
-        //    if (!ModelState.IsValid || sifra <= 0)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-        //    try
-        //    {
-        //        var komitent = _context.Komitenti.Find(sifra);
-        //        if (komitent == null)
-        //        {
-        //            return new EmptyResult();
-        //        }
-        //        return new JsonResult(komitent);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(StatusCodes.Status503ServiceUnavailable,
-        //            ex.Message);
-        //    }
-        //}
+            if (!ModelState.IsValid || sifra <= 0)
+            {
+                return BadRequest(ModelState);
+            }
+            try
+            {
+                var komitent = _context.Komitenti.Find(sifra);
+                if (komitent == null)
+                {
+                    return new EmptyResult();
+                }
+                return new JsonResult(komitent);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status503ServiceUnavailable,
+                    ex.Message);
+            }
+        }
 
 
         [HttpPost]
@@ -101,25 +101,25 @@ namespace Banka.Controllers
             try
             {
 
-                var entitetIzBaze = _context.Komitenti.Find(sifra);
+                var entitetizbaze = _context.Komitenti.Find(sifra);
 
-                if (entitetIzBaze == null)
+                if (entitetizbaze == null)
                 {
                     return StatusCode(StatusCodes.Status204NoContent, sifra);
                 }
 
-                entitetIzBaze.sifra_komitenta = entitet.sifra_komitenta;
-                entitetIzBaze.oib = entitet.oib;
-                entitetIzBaze.ime = entitet.ime;
-                entitetIzBaze.prezime = entitet.prezime;
-                entitetIzBaze.datum_rodenja = entitet.datum_rodenja;
-                entitetIzBaze.ulica_stanovanja = entitet.ulica_stanovanja;
-                entitetIzBaze.grad_stanovanja = entitet.grad_stanovanja;
+                entitetizbaze.sifra_komitenta = entitet.sifra_komitenta;
+                entitetizbaze.oib = entitet.oib;
+                entitetizbaze.ime = entitet.ime;
+                entitetizbaze.prezime = entitet.prezime;
+                entitetizbaze.datum_rodenja = entitet.datum_rodenja;
+                entitetizbaze.ulica_stanovanja = entitet.ulica_stanovanja;
+                entitetizbaze.grad_stanovanja = entitet.grad_stanovanja;
 
-                _context.Komitenti.Update(entitetIzBaze);
+                _context.Komitenti.Update(entitetizbaze);
                 _context.SaveChanges();
 
-                return StatusCode(StatusCodes.Status200OK, entitetIzBaze);
+                return StatusCode(StatusCodes.Status200OK, entitetizbaze);
             }
             catch (Exception ex)
             {
@@ -142,14 +142,14 @@ namespace Banka.Controllers
 
             try
             {
-                var entitetIzbaze = _context.Komitenti.Find(sifra);
+                var entitetizbaze = _context.Komitenti.Find(sifra);
 
-                if (entitetIzbaze == null)
+                if (entitetizbaze == null)
                 {
                     return StatusCode(StatusCodes.Status204NoContent, sifra);
                 }
 
-                _context.Komitenti.Remove(entitetIzbaze);
+                _context.Komitenti.Remove(entitetizbaze);
                 _context.SaveChanges();
 
                 return new JsonResult(new { poruka = "Obrisano" });
