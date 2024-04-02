@@ -3,7 +3,7 @@ using Banka.Models;
     
     namespace Banka.Extension
 {
-    public static class Mapping
+    public static class MappingKredit
     {
         public static List<KreditDTORead> MapKreditReadList(this List<Kredit>lista)
 

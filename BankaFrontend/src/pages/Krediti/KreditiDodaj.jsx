@@ -43,7 +43,7 @@ export default function KreditiDodaj (){
         <Form.Label>Šifra kredita</Form.Label>
         <Form.Control 
 type="text"
-name="sifra" 
+name="sifra_kredita" 
 />
     </Form.Group>
 
@@ -51,7 +51,7 @@ name="sifra"
         <Form.Label>Vrsta kredita</Form.Label>
         <Form.Control 
 type="text"
-name="naziv" 
+name="vrsta_kredita" 
 />
     </Form.Group>
 
@@ -59,7 +59,7 @@ name="naziv"
         <Form.Label>Vrsta kamate</Form.Label>   
         <Form.Control 
 type="text"
-name="kamata" 
+name="vrsta_kamate" 
 />
     </Form.Group>
 
@@ -67,7 +67,7 @@ name="kamata"
         <Form.Label>Valuta kredita</Form.Label>
         <Form.Control 
 type="text"
-name="valuta" 
+name="valuta_kredita" 
 />
     </Form.Group>
 
@@ -75,7 +75,7 @@ name="valuta"
         <Form.Check 
         label="Osiguranje kredita"
         
-        name="Osiguran" 
+        name="osiguranje_kredita" 
 />
     </Form.Group>
 

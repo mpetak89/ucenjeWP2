@@ -31,8 +31,8 @@ namespace Banka.Controllers
             try
             {
                 var lista = _context.Posudbe
-                    .Include(g=>g.sifra_kredita)
-                    .Include(g=>g.Komitent)
+                    .Include(g => g.sifra_kredita)
+                    .Include(g => g.Komitent)
                     .ToList();
                 if (lista == null || lista.Count == 0)
                 {

@@ -8,8 +8,8 @@ namespace Banka.Models
     {
         [Key] public int? sifra_posudbe { get; set; }
         [ForeignKey ("sifra_kredita")]
-        //public Kredit? Kredit{ get; set; }
-        public Kredit? sifra_kredita { get; set; }
+        public Kredit? Kredit{ get; set; }
+        
         [ForeignKey("sifra_komitenta")]
         public Komitent? Komitent { get; set; }
         public DateTime? datum_podizanja { get; set; }

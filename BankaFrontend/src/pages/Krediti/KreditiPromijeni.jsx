@@ -60,7 +60,7 @@ const kredit =
                 <Form.Control 
         type="text"
         defaultValue={kredit.sifra_kredita}
-        name="sifra" 
+        name="sifra_kredita" 
         />
             </Form.Group>
         
@@ -69,7 +69,7 @@ const kredit =
                 <Form.Control 
         type="text"
         defaultValue={kredit.vrsta_kredita}
-        name="naziv" 
+        name="vrsta_kredita" 
         />
             </Form.Group>
         
@@ -78,7 +78,7 @@ const kredit =
                 <Form.Control 
         type="text"
         defaultValue={kredit.vrsta_kamate}
-        name="kamata" 
+        name="vrsta_kamate" 
         />
             </Form.Group>
         
@@ -87,7 +87,7 @@ const kredit =
                 <Form.Control 
         type="text"
         defaultValue={kredit.valuta_kredita}
-        name="valuta" 
+        name="valuta_kredita" 
         />
             </Form.Group>
         
@@ -95,7 +95,7 @@ const kredit =
                 <Form.Check 
                 label="Osiguranje kredita"
                 defaultChecked={kredit.osiguranje_kredita}
-                name="Osiguran" 
+                name="osiguranje_kredita" 
         />
             </Form.Group>
         

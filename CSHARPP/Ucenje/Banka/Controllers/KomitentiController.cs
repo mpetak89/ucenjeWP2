@@ -1,4 +1,5 @@
 ﻿using Banka.Data;
+using Banka.Extension;
 using Banka.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,7 +35,7 @@ namespace Banka.Controllers
                 {
                     return new EmptyResult();
                 }
-                return new JsonResult(lista);
+                return new JsonResult(lista.MapKomitentReadList());
             }
             catch (Exception ex)
             {
@@ -59,7 +60,7 @@ namespace Banka.Controllers
                 {
                     return new EmptyResult();
                 }
-                return new JsonResult(komitent);
+                return new JsonResult(komitent.MapKomitentReadToDTO());
             }
             catch (Exception ex)
             {
@@ -70,17 +71,18 @@ namespace Banka.Controllers
 
 
         [HttpPost]
-        public IActionResult Post(Komitent entitet)
+        public IActionResult Post(KomitentDTOInsertUpdate dto)
         {
-            if (!ModelState.IsValid || entitet == null)
+            if (!ModelState.IsValid || dto == null)
             {
                 return BadRequest();
             }
             try
             {
+                var entitet = dto.MapKomitentInsertUpdateFromDTO(new Komitent());
                 _context.Komitenti.Add(entitet);
                 _context.SaveChanges();
-                return StatusCode(StatusCodes.Status201Created, entitet);
+                return StatusCode(StatusCodes.Status201Created, entitet.MapKomitentReadToDTO());
             }
             catch (Exception ex)
             {
@@ -92,9 +94,9 @@ namespace Banka.Controllers
 
         [HttpPut]
         [Route("{sifra:int}")]
-        public IActionResult Put(int sifra, Komitent entitet)
+        public IActionResult Put(int sifra, KomitentDTOInsertUpdate dto)
         {
-            if (sifra <= 0 || !ModelState.IsValid || entitet == null)
+            if (sifra <= 0 || !ModelState.IsValid || dto == null)
             {
                 return BadRequest();
             }
@@ -107,14 +109,7 @@ namespace Banka.Controllers
                 {
                     return StatusCode(StatusCodes.Status204NoContent, sifra);
                 }
-
-                entitetizbaze.sifra_komitenta = entitet.sifra_komitenta;
-                entitetizbaze.oib = entitet.oib;
-                entitetizbaze.ime = entitet.ime;
-                entitetizbaze.prezime = entitet.prezime;
-                entitetizbaze.datum_rodenja = entitet.datum_rodenja;
-                entitetizbaze.ulica_stanovanja = entitet.ulica_stanovanja;
-                entitetizbaze.grad_stanovanja = entitet.grad_stanovanja;
+                entitetizbaze = dto.MapKomitentInsertUpdateFromDTO(entitetizbaze);
 
                 _context.Komitenti.Update(entitetizbaze);
                 _context.SaveChanges();
