@@ -3,7 +3,7 @@ using Banka.Models;
     
     namespace Banka.Extension
 {
-    public static class MappingKredit
+    public static class Mapping
     {
         public static List<KreditDTORead> MapKreditReadList(this List<Kredit>lista)
 
@@ -29,11 +29,11 @@ using Banka.Models;
             return mapper.Map<KreditDTORead>(entitet);
         }
 
-        public static Kredit MapKreditInsertUpdateFromDTO(this KreditDTOInsertUpdate entitet)
+        public static KreditDTOInsertUpdate MapKreditInsertUpdatedToDTO(this Kredit entitet)
 
         {
-            var mapper = KreditMapper.InicijalizirajInsertUpdateFromDTO();
-            return mapper.Map<Kredit>(entitet);
+            var mapper = KreditMapper.InicijalizirajInsertUpdateToDTO();
+            return mapper.Map<KreditDTOInsertUpdate>(entitet);
         }
         public static Kredit MapKreditInsertUpdateFromDTO(this KreditDTOInsertUpdate dto, Kredit entitet)
         {

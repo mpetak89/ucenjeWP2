@@ -64,10 +64,10 @@ namespace Banka.Controllers
                 var kredit= _context.Krediti.Find(sifra_kredita);
                 if (kredit == null)
                 {
-                    return BadRequest("Kredit pod šifrom " + sifra_kredita + " ne postoji");
+                    return new EmptyResult();
 
                 }
-                return new JsonResult(kredit.MapKreditReadToDTO());
+                return new JsonResult(kredit.MapKreditInsertUpdatedToDTO());
             }
             catch (Exception ex)
 
@@ -87,7 +87,7 @@ namespace Banka.Controllers
             }
             try
             {
-                var kredit = kreditDTO.MapKreditInsertUpdateFromDTO();
+                var kredit = kreditDTO.MapKreditInsertUpdateFromDTO(new Kredit());
                 _context.Krediti.Add(kredit);
                 _context.SaveChanges();
                 return StatusCode(StatusCodes.Status201Created, 
