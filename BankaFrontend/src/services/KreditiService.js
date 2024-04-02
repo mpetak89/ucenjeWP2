@@ -1,3 +1,4 @@
+
 import {App} from "../constants"
 import { httpService } from "./httpService";
 
@@ -48,6 +49,7 @@ async function getBySifra (sifra_kredita){
     return await httpService.get('/Kredit/'+sifra_kredita)
     .then((res)=>{
         if(App.DEV) console.table(res.data);
+        return res.data;
         return res;
     }).catch((e)=>{
         console.log(e)

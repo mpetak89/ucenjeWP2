@@ -52,7 +52,7 @@ namespace Banka.Controllers
 
         }
         [HttpGet]
-        [Route("sifra_kredita:int")]
+        [Route("{sifra_kredita:int}")]
         public IActionResult GetBySifra(int sifra_kredita)
         {
             if (!ModelState.IsValid || sifra_kredita <= 0)

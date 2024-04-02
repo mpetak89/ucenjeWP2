@@ -9,11 +9,12 @@ export default function KreditiPromijeni (){
 
     const navigate = useNavigate();
     const routeParams = useParams();
-    const [kredit, setKredit] = useState({});
+    const [kredit, setKredit] = useState();
 
     async function dohvatiKredit(){
         await KreditiService.getBySifra(routeParams.sifra_kredita)
        .then((res)=>{
+        console.log (res.data)
         setKredit(res.data)
        })
         .catch ((e)=>{
@@ -60,7 +61,7 @@ const kredit =
                 <Form.Control 
         type="text"
         defaultValue={kredit.sifra_kredita}
-        name="sifra_kredita" 
+        name="sifra" 
         />
             </Form.Group>
         
@@ -69,7 +70,7 @@ const kredit =
                 <Form.Control 
         type="text"
         defaultValue={kredit.vrsta_kredita}
-        name="vrsta_kredita" 
+        name="naziv" 
         />
             </Form.Group>
         
@@ -78,7 +79,7 @@ const kredit =
                 <Form.Control 
         type="text"
         defaultValue={kredit.vrsta_kamate}
-        name="vrsta_kamate" 
+        name="kamata" 
         />
             </Form.Group>
         
@@ -87,7 +88,7 @@ const kredit =
                 <Form.Control 
         type="text"
         defaultValue={kredit.valuta_kredita}
-        name="valuta_kredita" 
+        name="valuta" 
         />
             </Form.Group>
         
@@ -95,7 +96,7 @@ const kredit =
                 <Form.Check 
                 label="Osiguranje kredita"
                 defaultChecked={kredit.osiguranje_kredita}
-                name="osiguranje_kredita" 
+                name="Osiguran" 
         />
             </Form.Group>
         

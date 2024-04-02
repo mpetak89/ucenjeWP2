@@ -1,4 +1,5 @@
 ﻿using Banka.Data;
+using Banka.Extension;
 using Banka.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -31,14 +32,20 @@ namespace Banka.Controllers
             try
             {
                 var lista = _context.Posudbe
-                    .Include(g => g.sifra_kredita)
-                    .Include(g => g.Komitent)
+                    .Include(g=>g.Kredit)
+                    .Include(g=>g.Komitent)
                     .ToList();
                 if (lista == null || lista.Count == 0)
                 {
                     return new EmptyResult();
                 }
-                return new JsonResult(lista);
+                foreach (var item in lista)
+                {
+                    Console.WriteLine(item.Kredit!.vrsta_kredita);
+                    Console.WriteLine(item.Komitent!.ime);
+                    
+                }
+                    return new JsonResult(lista.MapPosudbaReadList());
             }
             catch (Exception ex)
             {
@@ -46,7 +53,30 @@ namespace Banka.Controllers
                     ex.Message);
             }
         }
+        [HttpGet]
+        [Route("{sifra_posudbe:int}")]
+        public IActionResult GetBySifra(int sifra_posudbe)
+        {
 
+            if (!ModelState.IsValid || sifra_posudbe <= 0)
+            {
+                return BadRequest(ModelState);
+            }
+            try
+            {
+                var Posudba = _context.Posudbe.Find(sifra_posudbe);
+                if (Posudba == null)
+                {
+                    return new EmptyResult();
+                }
+                return new JsonResult(Posudba.MapPosudbaReadToDTO());
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status503ServiceUnavailable,
+                    ex.Message);
+            }
+        }
 
 
         [HttpPost]
@@ -71,7 +101,7 @@ namespace Banka.Controllers
 
 
         [HttpPut]
-        [Route("{sifra:int}")]
+        [Route("{sifra_posudbe:int}")]
         public IActionResult Put(int sifra, Posudba entitet)
         {
             if (sifra <= 0 || !ModelState.IsValid || entitet == null)
