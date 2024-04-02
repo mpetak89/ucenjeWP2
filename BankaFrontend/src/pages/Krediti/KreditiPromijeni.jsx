@@ -9,12 +9,11 @@ export default function KreditiPromijeni (){
 
     const navigate = useNavigate();
     const routeParams = useParams();
-    const [kredit, setKredit] = useState();
+    const [kredit, setKredit] = useState({});
 
     async function dohvatiKredit(){
         await KreditiService.getBySifra(routeParams.sifra_kredita)
        .then((res)=>{
-        console.log (res.data)
         setKredit(res.data)
        })
         .catch ((e)=>{
@@ -50,6 +49,7 @@ const kredit =
 
   promijeniKredit(kredit);
 }
+
 
     return(
         <Container>
