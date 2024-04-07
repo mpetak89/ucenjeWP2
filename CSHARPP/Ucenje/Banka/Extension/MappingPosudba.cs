@@ -32,6 +32,7 @@ using Banka.Models;
         public static Posudba MapPosudbaInsertUpdateFromDTO(this PosudbaDTOInsertUpdate dto, Posudba entitet)
         {
             entitet.sifra_posudbe = dto.sifra_posudbe;
+          
             entitet.datum_podizanja = dto.datum_podizanja;
             entitet.datum_vracanja = dto.datum_vracanja;
             entitet.iznos = dto.iznos;

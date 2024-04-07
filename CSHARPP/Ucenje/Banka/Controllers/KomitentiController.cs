@@ -30,12 +30,12 @@ namespace Banka.Controllers
             }
             try
             {
-                var lista = _context.Komitenti.ToList();
-                if (lista == null || lista.Count == 0)
+                var komitenti = _context.Komitenti.ToList();
+                if (komitenti == null || komitenti.Count == 0)
                 {
-                    return new EmptyResult();
+                    return BadRequest("Ne postoje komitenti u bazi");
                 }
-                return new JsonResult(lista.MapKomitentReadList());
+                return new JsonResult(komitenti.MapKomitentReadList());
             }
             catch (Exception ex)
             {
@@ -46,21 +46,21 @@ namespace Banka.Controllers
 
         [HttpGet]
         [Route("{sifra_komitenta:int}")]
-        public IActionResult GetBySifra(int sifra)
+        public IActionResult GetBySifra(int sifra_komitenta)
         {
 
-            if (!ModelState.IsValid || sifra <= 0)
+            if (!ModelState.IsValid || sifra_komitenta <= 0)
             {
                 return BadRequest(ModelState);
             }
             try
             {
-                var komitent = _context.Komitenti.Find(sifra);
+                var komitent = _context.Komitenti.Find(sifra_komitenta);
                 if (komitent == null)
                 {
-                    return new EmptyResult();
+                    return BadRequest("Ne postoji komitent pod šifrom " + sifra_komitenta + " u bazi");
                 }
-                return new JsonResult(komitent.MapKomitentReadToDTO());
+                return new JsonResult(komitent.MapKomitentInsertUpdatedToDTO());
             }
             catch (Exception ex)
             {
@@ -71,18 +71,19 @@ namespace Banka.Controllers
 
 
         [HttpPost]
-        public IActionResult Post(KomitentDTOInsertUpdate dto)
+        public IActionResult Post(KomitentDTOInsertUpdate komitentDTO)
         {
-            if (!ModelState.IsValid || dto == null)
+            if (!ModelState.IsValid || komitentDTO == null)
             {
                 return BadRequest();
             }
             try
             {
-                var entitet = dto.MapKomitentInsertUpdateFromDTO(new Komitent());
-                _context.Komitenti.Add(entitet);
+                var komitent = komitentDTO.MapKomitentInsertUpdateFromDTO(new Komitent());
+                _context.Komitenti.Add(komitent);
                 _context.SaveChanges();
-                return StatusCode(StatusCodes.Status201Created, entitet.MapKomitentReadToDTO());
+                return StatusCode(StatusCodes.Status201Created,
+                    komitent.MapKomitentReadToDTO());
             }
             catch (Exception ex)
             {
@@ -93,28 +94,29 @@ namespace Banka.Controllers
 
 
         [HttpPut]
-        [Route("{sifra:int}")]
-        public IActionResult Put(int sifra, KomitentDTOInsertUpdate dto)
+        [Route("{sifra_komitenta:int}")]
+        public IActionResult Put(int sifra_komitenta, KomitentDTOInsertUpdate komitentDTO)
         {
-            if (sifra <= 0 || !ModelState.IsValid || dto == null)
+            if (sifra_komitenta <= 0 || !ModelState.IsValid || komitentDTO == null)
             {
-                return BadRequest();
+                return BadRequest(ModelState); 
             }
             try
             {
 
-                var entitetizbaze = _context.Komitenti.Find(sifra);
-
-                if (entitetizbaze == null)
+                var komitentizbaze = _context.Komitenti.Find(sifra_komitenta);
+                if (komitentizbaze == null)
                 {
-                    return StatusCode(StatusCodes.Status204NoContent, sifra);
+                    return BadRequest("Ne postoji komitent pod šifrom " + sifra_komitenta + " u bazi");
                 }
-                entitetizbaze = dto.MapKomitentInsertUpdateFromDTO(entitetizbaze);
 
-                _context.Komitenti.Update(entitetizbaze);
+                    var komitent = komitentDTO.MapKomitentInsertUpdateFromDTO(komitentizbaze);
+
+                _context.Komitenti.Update(komitent);
                 _context.SaveChanges();
 
-                return StatusCode(StatusCodes.Status200OK, entitetizbaze);
+                return StatusCode(StatusCodes.Status200OK,
+                    komitent.MapKomitentReadToDTO());
             }
             catch (Exception ex)
             {
@@ -126,28 +128,28 @@ namespace Banka.Controllers
 
 
         [HttpDelete]
-        [Route("{sifra:int}")]
+        [Route("{sifra_komitenta:int}")]
         [Produces("application/json")]
-        public IActionResult Delete(int sifra)
+        public IActionResult Delete(int sifra_komitenta)
         {
-            if (!ModelState.IsValid || sifra <= 0)
+            if (!ModelState.IsValid || sifra_komitenta <= 0)
             {
                 return BadRequest();
             }
 
             try
             {
-                var entitetizbaze = _context.Komitenti.Find(sifra);
+                var komitentizbaze = _context.Komitenti.Find(sifra_komitenta);
 
-                if (entitetizbaze == null)
+                if (komitentizbaze == null)
                 {
-                    return StatusCode(StatusCodes.Status204NoContent, sifra);
+                    return BadRequest("Ne postoji komitent pod šifrom " + sifra_komitenta + " u bazi");
                 }
 
-                _context.Komitenti.Remove(entitetizbaze);
+                _context.Komitenti.Remove(komitentizbaze);
                 _context.SaveChanges();
 
-                return new JsonResult(new { poruka = "Obrisano" });
+                return new JsonResult(new { poruka = "Obrisan komitent pod šifrom "+ sifra_komitenta });
 
             }
             catch (Exception ex)

@@ -29,15 +29,15 @@ using Banka.Models;
             return mapper.Map<KomitentDTORead>(entitet);
         }
 
-        public static Komitent MapKomitentInsertUpdateFromDTO(this KomitentDTOInsertUpdate entitet)
+        public static KomitentDTOInsertUpdate MapKomitentInsertUpdatedToDTO(this Komitent entitet)
 
         {
-            var mapper = KomitentMapper.InicijalizirajInsertUpdateFromDTO();
-            return mapper.Map<Komitent>(entitet);
+            var mapper = KomitentMapper.InicijalizirajInsertUpdateToDTO();
+            return mapper.Map<KomitentDTOInsertUpdate>(entitet);
         }
         public static Komitent MapKomitentInsertUpdateFromDTO(this KomitentDTOInsertUpdate dto, Komitent entitet)
         {
-            entitet.sifra_komitenta = dto.sifra_komitenta;
+            //entitet.sifra_komitenta = dto.sifra_komitenta;
             entitet.oib = dto.oib;
             entitet.ime = dto.ime;
             entitet.prezime = dto.prezime;

@@ -34,8 +34,10 @@ function NavBar() {
                 >
                 Komitenti
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
-                Posudba
+              <NavDropdown.Item 
+                onClick={()=>navigate(RoutesNames.POSUDBA_PREGLED)}              
+                >
+                Posudbe
                 </NavDropdown.Item>
               <NavDropdown.Divider />
             </NavDropdown>

@@ -1,120 +1,142 @@
-// import { useEffect, useState } from "react";
-// import { Button, Col, Container, Form, Row } from "react-bootstrap";
-// import { Link, useNavigate, useParams } from "react-router-dom";
-// import KreditiService from "../../services/KreditiService";
-// import { RoutesNames } from "../../constants";
+import { useEffect, useState } from "react";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import KomitentiService from "../../services/KomitentiService";
+import { RoutesNames } from "../../constants";
 
 
-// export default function KreditiPromijeni (){
+export default function KomitentiPromijeni (){
 
-//     const navigate = useNavigate();
-//     const routeParams = useParams();
-//     const [kredit, setKredit] = useState({});
+    const navigate = useNavigate();
+    const routeParams = useParams();
+    const [komitent, setKomitent] = useState({});
 
-//     async function dohvatiKredit(){
-//         await KreditiService.getBySifra(routeParams.sifra_kredita)
-//        .then((res)=>{
-//         setKredit(res.data)
-//        })
-//         .catch ((e)=>{
-//         alert (e.poruka);
-//     });
-// }
-// useEffect(()=>{
-//     dohvatiKredit();
-// },[]);
+    async function dohvatiKomitent(){
+        await KomitentiService.getBySifra(routeParams.sifra_komitenta)
+       .then((res)=>{
+        setKomitent(res.data)
+       })
+        .catch ((e)=>{
+        alert (e.poruka);
+    });
+}
+useEffect(()=>{
+    dohvatiKomitent();
+},[]);
 
-// async function promijeniKredit(kredit){
-//     const odgovor = await KreditiService.promijeniKredit(routeParams.sifra_kredita,kredit);
-//     if(odgovor.ok){
-//       navigate(RoutesNames.KREDITI_PREGLED);
-//           }else{
-//             console.log (odgovor);
-//     alert(odgovor.poruka);
-// }
-// }
+async function promijeniKomitent(komitent){
+    const odgovor = await KomitentiService.promijeniKomitent(routeParams.sifra_komitenta,komitent);
+    if(odgovor.ok){
+      navigate(RoutesNames.KOMITENTI_PREGLED);
+          }else{
+            console.log (odgovor);
+    alert(odgovor.poruka);
+}
+}
 
-// function handleSubmit (e){
-// e.preventDefault();
-// const podaci = new FormData(e.target);
+function handleSubmit (e){
+e.preventDefault();
+const podaci = new FormData(e.target);
 
-// const kredit = 
-// {
-//     sifra_kredita: parseInt (podaci.get('sifra_kredita')),
-//     vrsta_kredita: podaci.get ('vrsta_kredita'),
-//     vrsta_kamate: podaci.get ('vrsta_kamate'),
-//     valuta_kredita: podaci.get ('valuta_kredita'),
-//     osiguranje_kredita: podaci.get('osiguranje_kredita')=='on'? true:false
-//   };
+const komitent = 
+{
+    sifra_komitenta: parseInt (podaci.get('sifra_komitenta')),
+    oib: parseInt (podaci.get('oib')),
+    ime: podaci.get ('ime'),
+    prezime: podaci.get ('prezime'),
+    datum_rodenja: podaci.get ('datum_rodenja'),
+    ulica_stanovanja: podaci.get ('ulica_stanovanja'),
+    grad_stanovanja: podaci.get ('grad_stanovanja'),
+  };
 
-//   promijeniKredit(kredit);
-// }
+  promijeniKomitent(komitent);
+}
 
-//     return(
-//         <Container>
 
-//         <Form onSubmit = {handleSubmit}>
+    return(
+        <Container>
+
+        <Form onSubmit = {handleSubmit}>
         
-//         <Form.Group controlId ="sifra_kredita">
-//                 <Form.Label>Šifra kredita</Form.Label>
-//                 <Form.Control 
-//         type="text"
-//         defaultValue={kredit.sifra_kredita}
-//         name="sifra" 
-//         />
-//             </Form.Group>
+        <Form.Group controlId ="sifra_komitenta">
+                <Form.Label>Šifra komitenta</Form.Label>
+                <Form.Control 
+        type="number"
+        // defaultValue={komitentsifra_komitenta}
+        name="sifra_komitenta" 
+        />
+            </Form.Group>
         
-//             <Form.Group controlId ="vrsta_kredita">
-//                 <Form.Label>Vrsta kredita</Form.Label>
-//                 <Form.Control 
-//         type="text"
-//         defaultValue={kredit.vrsta_kredita}
-//         name="naziv" 
-//         />
-//             </Form.Group>
+            <Form.Group controlId ="oib">
+                <Form.Label>OIB</Form.Label>
+                <Form.Control 
+        type="text"
+        // defaultValue={komitent.oib}
+        name="oib" 
+        />
+            </Form.Group>
         
-//             <Form.Group controlId ="vrsta_kamate">
-//                 <Form.Label>Vrsta kamate</Form.Label>   
-//                 <Form.Control 
-//         type="text"
-//         defaultValue={kredit.vrsta_kamate}
-//         name="kamata" 
-//         />
-//             </Form.Group>
+            <Form.Group controlId ="ime">
+                <Form.Label>Ime komitenta</Form.Label>   
+                <Form.Control 
+        type="text"
+        // defaultValue={komitent.ime}
+        name="ime" 
+        />
+            </Form.Group>
         
-//             <Form.Group controlId ="valuta_kredita">
-//                 <Form.Label>Valuta kredita</Form.Label>
-//                 <Form.Control 
-//         type="text"
-//         defaultValue={kredit.valuta_kredita}
-//         name="valuta" 
-//         />
-//             </Form.Group>
+            <Form.Group controlId ="prezime">
+                <Form.Label>Prezime komitenta</Form.Label>
+                <Form.Control 
+        type="text"
+        // defaultValue={komitent.prezime}
+        name="prezime" 
+        />
+            </Form.Group>
         
-//             <Form.Group controlId ="osiguranje_kredita">
-//                 <Form.Check 
-//                 label="Osiguranje kredita"
-//                 defaultChecked={kredit.osiguranje_kredita}
-//                 name="Osiguran" 
-//         />
-//             </Form.Group>
+            <Form.Group controlId ="datum_rodenja">
+                <Form.Label>Datum rođenja</Form.Label>
+                <Form.Control 
+        type="text"
+        // defaultValue={komitent.datum_rodenja}
+        name="datum_rodenja" 
+        />
+            </Form.Group>
+
+            <Form.Group controlId ="ulica_stanovanja">
+                <Form.Label>Ulica stanovanja</Form.Label>
+                <Form.Control 
+        type="text"
+        // defaultValue={komitent.ulica_stanovanja}
+        name="ulica_stanovanja" 
+        />
+            </Form.Group>
+
+            <Form.Group controlId ="grad_stanovanja">
+                <Form.Label>Grad stanovanja</Form.Label>
+                <Form.Control 
+        type="text"
+        // defaultValue={komitent.grad_stanovanja}
+        name="grad_stanovanja" 
+        />
+            </Form.Group>
         
-//             <Row className="akcije">
-//                             <Col>
-//                                 <Link 
-//                                 className="btn btn-danger"
-//                                 to={RoutesNames.KREDITI_PREGLED}>Odustani</Link>
-//                             </Col>
-//                             <Col>
-//                                 <Button
-//                                     variant="primary"
-//                                     type="submit"
-//                                 >
-//                                     Promijeni kredit
-//                                 </Button>
-//                             </Col>
-//                         </Row>
-//                  </Form>
-//                 </Container>
-//             );
-//         }
+            <Row className="akcije">
+                            <Col>
+                                <Link 
+                                className="btn btn-danger"
+                                to={RoutesNames.KOMITENTI_PREGLED}>Odustani</Link>
+                            </Col>
+                            <Col>
+                                <Button
+                                    variant="primary"
+                                    type="submit"
+                                >
+                                    Promijeni komitenta
+                                </Button>
+                            </Col>
+                        </Row>
+                 </Form>
+                </Container>
+            );
+        }
