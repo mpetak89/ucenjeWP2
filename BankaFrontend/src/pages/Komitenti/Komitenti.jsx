@@ -26,7 +26,7 @@ useEffect(()=>{
     dohvatiKomitente();
 },[]);
 
-async function obrisiKomitenta (sifra_komitenta){
+async function obrisiKomitent (sifra_komitenta){
     const odgovor = await KomitentiService.obrisiKomitent(sifra_komitenta);
     if (odgovor.ok) {
 alert (odgovor.poruka.data.poruka);
@@ -82,7 +82,7 @@ dohvatiKomitente();
                                     &nbsp;&nbsp;&nbsp;
                                     <Button 
                                 variant="danger gumb2"
-                                onClick={()=>obrisiKomitenta (komitent.sifra_komitenta)}
+                                onClick={()=>obrisiKomitent (komitent.sifra_komitenta)}
                                 >
                                     <MdDelete  
                                     size={25} 

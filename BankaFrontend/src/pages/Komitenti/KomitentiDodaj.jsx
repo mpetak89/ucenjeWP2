@@ -42,7 +42,7 @@ export default function KomitentiDodaj (){
 <Form.Group controlId ="sifra_komitenta">
         <Form.Label>Šifra komitenta</Form.Label>
         <Form.Control 
-type="number"
+type="text"
 name="sifra_komitenta" 
 />
     </Form.Group>
@@ -87,7 +87,7 @@ name="ulica_stanovanja"
 />
 </Form.Group>
 
-<Form.Group controlId ="grad_stanovanja"n>
+<Form.Group controlId ="grad_stanovanja">
     <Form.Label>Grad stanovanja</Form.Label>
     <Form.Control 
 type="text"

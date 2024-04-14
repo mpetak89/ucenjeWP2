@@ -61,7 +61,7 @@ namespace Banka.Controllers
             }
             try
             {
-                var kredit= _context.Krediti.Find(sifra_kredita);
+                var kredit = _context.Krediti.Find(sifra_kredita);
                 if (kredit == null)
                 {
                     return new EmptyResult();
@@ -90,9 +90,9 @@ namespace Banka.Controllers
                 var kredit = kreditDTO.MapKreditInsertUpdateFromDTO(new Kredit());
                 _context.Krediti.Add(kredit);
                 _context.SaveChanges();
-                return StatusCode(StatusCodes.Status201Created, 
+                return StatusCode(StatusCodes.Status201Created,
                     kredit.MapKreditReadToDTO());
-                            }
+            }
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status503ServiceUnavailable, ex.Message);
@@ -116,9 +116,9 @@ namespace Banka.Controllers
                 }
 
 
-                var kredit=kreditDTO.MapKreditInsertUpdateFromDTO(kreditizbaze);
-                
-                _context.Krediti.Update(kredit); 
+                var kredit = kreditDTO.MapKreditInsertUpdateFromDTO(kreditizbaze);
+
+                _context.Krediti.Update(kredit);
                 _context.SaveChanges();
 
                 return StatusCode(StatusCodes.Status200OK, kredit.MapKreditReadToDTO());
@@ -166,6 +166,4 @@ namespace Banka.Controllers
 
     }
 
-        }
-
-
+}

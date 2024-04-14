@@ -61,8 +61,8 @@ const komitent =
         <Form.Group controlId ="sifra_komitenta">
                 <Form.Label>Šifra komitenta</Form.Label>
                 <Form.Control 
-        type="number"
-        // defaultValue={komitentsifra_komitenta}
+        type="text"
+        defaultValue={komitent.sifra_komitenta}
         name="sifra_komitenta" 
         />
             </Form.Group>
@@ -71,7 +71,7 @@ const komitent =
                 <Form.Label>OIB</Form.Label>
                 <Form.Control 
         type="text"
-        // defaultValue={komitent.oib}
+        defaultValue={komitent.oib}
         name="oib" 
         />
             </Form.Group>
@@ -80,7 +80,7 @@ const komitent =
                 <Form.Label>Ime komitenta</Form.Label>   
                 <Form.Control 
         type="text"
-        // defaultValue={komitent.ime}
+        defaultValue={komitent.ime}
         name="ime" 
         />
             </Form.Group>
@@ -89,7 +89,7 @@ const komitent =
                 <Form.Label>Prezime komitenta</Form.Label>
                 <Form.Control 
         type="text"
-        // defaultValue={komitent.prezime}
+        defaultValue={komitent.prezime}
         name="prezime" 
         />
             </Form.Group>
@@ -98,7 +98,7 @@ const komitent =
                 <Form.Label>Datum rođenja</Form.Label>
                 <Form.Control 
         type="text"
-        // defaultValue={komitent.datum_rodenja}
+        defaultValue={komitent.datum_rodenja}
         name="datum_rodenja" 
         />
             </Form.Group>
@@ -107,7 +107,7 @@ const komitent =
                 <Form.Label>Ulica stanovanja</Form.Label>
                 <Form.Control 
         type="text"
-        // defaultValue={komitent.ulica_stanovanja}
+        defaultValue={komitent.ulica_stanovanja}
         name="ulica_stanovanja" 
         />
             </Form.Group>
@@ -116,7 +116,7 @@ const komitent =
                 <Form.Label>Grad stanovanja</Form.Label>
                 <Form.Control 
         type="text"
-        // defaultValue={komitent.grad_stanovanja}
+        defaultValue={komitent.grad_stanovanja}
         name="grad_stanovanja" 
         />
             </Form.Group>

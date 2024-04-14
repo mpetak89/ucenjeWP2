@@ -1,11 +1,11 @@
 ﻿using Banka.Mappers;
 using Banka.Models;
-    
-    namespace Banka.Extension
+
+namespace Banka.Extension
 {
     public static class Mapping
     {
-        public static List<KreditDTORead> MapKreditReadList(this List<Kredit>lista)
+        public static List<KreditDTORead> MapKreditReadList(this List<Kredit> lista)
 
         {
             var mapper = KreditMapper.InicijalizirajReadToDTO();
@@ -48,4 +48,3 @@ using Banka.Models;
 
     }
 }
- 

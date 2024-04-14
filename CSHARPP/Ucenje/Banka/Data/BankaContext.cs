@@ -4,14 +4,14 @@ using Microsoft.EntityFrameworkCore;
 namespace Banka.Data
 
 {
-    public class BankaContext:DbContext
+    public class BankaContext : DbContext
     {
         public BankaContext(DbContextOptions<BankaContext> options)
-            :base(options)
+            : base(options)
         {
 
         }
-        public DbSet<Kredit> Krediti { get ; set; }
+        public DbSet<Kredit> Krediti { get; set; }
         public DbSet<Posudba> Posudbe { get; set; }
         public DbSet<Komitent> Komitenti { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

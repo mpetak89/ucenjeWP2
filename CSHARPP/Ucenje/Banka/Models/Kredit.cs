@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Banka.Models
 {
-    public class Kredit:Entitet
+    public class Kredit : Entitet
     {
         /// <summary>
         /// Vrsta kredita
@@ -13,7 +13,7 @@ namespace Banka.Models
         /// <summary>
         /// Valuta kredita
         /// </summary>
-        [Required(ErrorMessage = "Obavezan unos valute kredita")] 
+        [Required(ErrorMessage = "Obavezan unos valute kredita")]
         public string? valuta_kredita { get; set; }
         /// <summary>
         /// Vrsta kamate
@@ -29,4 +29,3 @@ namespace Banka.Models
 
     }
 }
-

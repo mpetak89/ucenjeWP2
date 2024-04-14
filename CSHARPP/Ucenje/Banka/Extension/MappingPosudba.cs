@@ -1,11 +1,11 @@
 ﻿using Banka.Mappers;
 using Banka.Models;
-    
-    namespace Banka.Extension
+
+namespace Banka.Extension
 {
     public static class MappingPosudba
     {
-        public static List<PosudbaDTORead> MapPosudbaReadList(this List<Posudba>lista)
+        public static List<PosudbaDTORead> MapPosudbaReadList(this List<Posudba> lista)
 
         {
             var mapper = PosudbaMapper.InicijalizirajReadToDTO();
@@ -16,7 +16,7 @@ using Banka.Models;
             });
             return vrati;
         }
-          public static PosudbaDTORead MapPosudbaReadToDTO(this Posudba entitet)
+        public static PosudbaDTORead MapPosudbaReadToDTO(this Posudba entitet)
 
         {
             var mapper = PosudbaMapper.InicijalizirajReadToDTO();
@@ -32,14 +32,13 @@ using Banka.Models;
         public static Posudba MapPosudbaInsertUpdateFromDTO(this PosudbaDTOInsertUpdate dto, Posudba entitet)
         {
             entitet.sifra_posudbe = dto.sifra_posudbe;
-          
+
             entitet.datum_podizanja = dto.datum_podizanja;
             entitet.datum_vracanja = dto.datum_vracanja;
             entitet.iznos = dto.iznos;
             entitet.kamata = dto.kamata;
             return entitet;
-    }
+        }
 
     }
 }
- 

@@ -25,14 +25,14 @@ namespace Banka.Mappers
                 );
         }
         public static Mapper InicijalizirajInsertUpdateToDTO()
-            {
-                return new Mapper(
-                    new MapperConfiguration(c =>
-                    {
-                        c.CreateMap<Posudba, PosudbaDTOInsertUpdate>();
-                    })
-                    );
-            }
+        {
+            return new Mapper(
+                new MapperConfiguration(c =>
+                {
+                    c.CreateMap<Posudba, PosudbaDTOInsertUpdate>();
+                })
+                );
+        }
         public static Mapper InicijalizirajInsertUpdateFromDTO()
         {
             return new Mapper(

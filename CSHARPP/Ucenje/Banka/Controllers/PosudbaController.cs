@@ -32,8 +32,8 @@ namespace Banka.Controllers
             try
             {
                 var lista = _context.Posudbe
-                    .Include(g=>g.Kredit)
-                    .Include(g=>g.Komitent)
+                    .Include(g => g.Kredit)
+                    .Include(g => g.Komitent)
                     .ToList();
                 if (lista == null || lista.Count == 0)
                 {
@@ -43,9 +43,9 @@ namespace Banka.Controllers
                 {
                     Console.WriteLine(item.Kredit!.vrsta_kredita);
                     Console.WriteLine(item.Komitent!.ime);
-                    
+
                 }
-                    return new JsonResult(lista.MapPosudbaReadList());
+                return new JsonResult(lista.MapPosudbaReadList());
             }
             catch (Exception ex)
             {

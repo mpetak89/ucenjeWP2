@@ -49,8 +49,8 @@ return 'nema';
     <Table striped bordered hover responsive>
         <thead>
             <tr className="centar">
-                <th>Vrsta Kredita</th>
                 <th>Šifra Kredita</th>
+                <th>Vrsta Kredita</th>
                 <th>Valuta Kredita</th>
                 <th>Vrsta Kamate</th>
                 <th>Osiguranje Kredita</th>
@@ -60,8 +60,8 @@ return 'nema';
         <tbody>
                     {krediti && krediti.map((kredit, index)=>(
                         <tr key = {index}>
-                            <td className="centar">{kredit.vrsta_kredita}</td>
                             <td className="centar">{kredit.sifra_kredita}</td>
+                            <td className="centar">{kredit.vrsta_kredita}</td>
                             <td className="centar">{kredit.valuta_kredita}</td>
                             <td className="centar">{kredit.vrsta_kamate}</td>
                             <td className="centar">{osiguranje(kredit)}</td>

@@ -7,9 +7,9 @@ namespace Banka.Models
     public class Posudba
     {
         [Key] public int? sifra_posudbe { get; set; }
-        [ForeignKey ("sifra_kredita")]
-        public Kredit? Kredit{ get; set; }
-        
+        [ForeignKey("sifra_kredita")]
+        public Kredit? Kredit { get; set; }
+
         [ForeignKey("sifra_komitenta")]
         public Komitent? Komitent { get; set; }
         public DateTime? datum_podizanja { get; set; }
@@ -17,6 +17,6 @@ namespace Banka.Models
         public decimal? iznos { get; set; }
         public decimal? kamata { get; set; }
 
-        
+
     }
 }

@@ -3,9 +3,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Banka.Models
 {
-    public class Komitent    
+    public class Komitent
     {
-        [Key]public int? sifra_komitenta { get; set; }
+        [Key] public int? sifra_komitenta { get; set; }
         public string? oib { get; set; }
         public string? ime { get; set; }
         public string? prezime { get; set; }
