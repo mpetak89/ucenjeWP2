@@ -11,7 +11,7 @@ export default function KomitentiPromijeni (){
     const routeParams = useParams();
     const [komitent, setKomitent] = useState({});
 
-    async function dohvatiKomitent(){
+    async function dohvatiKomitente(){
         await KomitentiService.getBySifra(routeParams.sifra_komitenta)
        .then((res)=>{
         setKomitent(res.data)
@@ -21,7 +21,7 @@ export default function KomitentiPromijeni (){
     });
 }
 useEffect(()=>{
-    dohvatiKomitent();
+    dohvatiKomitente();
 },[]);
 
 async function promijeniKomitent(komitent){
@@ -41,7 +41,7 @@ const podaci = new FormData(e.target);
 const komitent = 
 {
     sifra_komitenta: parseInt (podaci.get('sifra_komitenta')),
-    oib: parseInt (podaci.get('oib')),
+    oib: podaci.get('oib'),
     ime: podaci.get ('ime'),
     prezime: podaci.get ('prezime'),
     datum_rodenja: podaci.get ('datum_rodenja'),
@@ -70,7 +70,7 @@ const komitent =
             <Form.Group controlId ="oib">
                 <Form.Label>OIB</Form.Label>
                 <Form.Control 
-        type="text"
+        type="number"
         defaultValue={komitent.oib}
         name="oib" 
         />
@@ -97,7 +97,7 @@ const komitent =
             <Form.Group controlId ="datum_rodenja">
                 <Form.Label>Datum rođenja</Form.Label>
                 <Form.Control 
-        type="text"
+        type="DateTime"
         defaultValue={komitent.datum_rodenja}
         name="datum_rodenja" 
         />

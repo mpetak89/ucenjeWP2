@@ -39,7 +39,7 @@ async function promijeniKomitent (sifra_komitenta, komitent){
     })
     .catch((e)=>{
         console.log(e.response.data.errors);
-        return {ok: false,  poruka: 'Greška, komitent nije dodan'}
+        return {ok: false,  poruka: 'Greška, komitent nije promijenjen'}
     }); 
    return odgovor;
 }  

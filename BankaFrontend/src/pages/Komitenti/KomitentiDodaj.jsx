@@ -24,7 +24,7 @@ export default function KomitentiDodaj (){
         const komitent =
         {
             sifra_komitenta: parseInt (podaci.get('sifra_komitenta')),
-            oib: parseInt (podaci.get('oib')),
+            oib: podaci.get('oib'),
             ime: podaci.get ('ime'),
             prezime: podaci.get ('prezime'),
             datum_rodenja: podaci.get ('datum_rodenja'),

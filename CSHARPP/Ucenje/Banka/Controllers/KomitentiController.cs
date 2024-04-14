@@ -99,12 +99,12 @@ namespace Banka.Controllers
         {
             if (sifra_komitenta <= 0 || !ModelState.IsValid || komitentDTO == null)
             {
-                return BadRequest(ModelState); 
+                return BadRequest(ModelState);
             }
             try
             {
 
-                var komitentIzBaze= _context.Komitenti.Find(sifra_komitenta);
+                var komitentIzBaze = _context.Komitenti.Find(sifra_komitenta);
                 if (komitentIzBaze == null)
                 {
                     return BadRequest("Ne postoji komitent pod šifrom " + sifra_komitenta + " u bazi");
@@ -150,7 +150,7 @@ namespace Banka.Controllers
                 _context.Komitenti.Remove(komitentIzBaze);
                 _context.SaveChanges();
 
-                return new JsonResult(new { poruka = "Obrisan komitent pod šifrom "+ sifra_komitenta });
+                return new JsonResult(new { poruka = "Obrisan komitent pod šifrom " + sifra_komitenta });
 
             }
             catch (Exception ex)

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Banka")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+189e810005cefdde79b8a4e015399361e94eca71")]
 [assembly: System.Reflection.AssemblyProductAttribute("Banka")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Banka")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
