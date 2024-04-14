@@ -3,6 +3,7 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import KomitentiService from "../../services/KomitentiService";
 import { RoutesNames } from "../../constants";
+import Komitenti from "./Komitenti";
 
 
 export default function KomitentiPromijeni (){
@@ -61,7 +62,7 @@ const komitent =
         <Form.Group controlId ="sifra_komitenta">
                 <Form.Label>Šifra komitenta</Form.Label>
                 <Form.Control 
-        type="text"
+        type="number"
         defaultValue={komitent.sifra_komitenta}
         name="sifra_komitenta" 
         />
@@ -70,7 +71,7 @@ const komitent =
             <Form.Group controlId ="oib">
                 <Form.Label>OIB</Form.Label>
                 <Form.Control 
-        type="number"
+        type="text"
         defaultValue={komitent.oib}
         name="oib" 
         />

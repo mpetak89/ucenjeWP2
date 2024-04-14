@@ -30,12 +30,12 @@ namespace Banka.Controllers
             }
             try
             {
-                var lista = _context.Komitenti.ToList();
-                if (lista == null || lista.Count == 0)
+                var komitenti = _context.Komitenti.ToList();
+                if (komitenti == null || komitenti.Count == 0)
                 {
                     return BadRequest("Ne postoje komitenti u bazi");
                 }
-                return new JsonResult(lista.MapKomitentReadList());
+                return new JsonResult(komitenti.MapKomitentReadList());
             }
             catch (Exception ex)
             {
@@ -55,12 +55,12 @@ namespace Banka.Controllers
             }
             try
             {
-                var k = _context.Komitenti.Find(sifra_komitenta);
-                if (k == null)
+                var komitent = _context.Komitenti.Find(sifra_komitenta);
+                if (komitent == null)
                 {
                     return BadRequest("Ne postoji komitent pod šifrom " + sifra_komitenta + " u bazi");
                 }
-                return new JsonResult(k.MapKomitentInsertUpdatedToDTO());
+                return new JsonResult(komitent.MapKomitentInsertUpdateToDTO());
             }
             catch (Exception ex)
             {
@@ -117,7 +117,8 @@ namespace Banka.Controllers
                 _context.SaveChanges();
 
                 return StatusCode(StatusCodes.Status200OK,
-                    komitent.MapKomitentInsertUpdatedToDTO());
+                    komitent.MapKomitentInsertUpdateToDTO());
+
             }
             catch (Exception ex)
             {

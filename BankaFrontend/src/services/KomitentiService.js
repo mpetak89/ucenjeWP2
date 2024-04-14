@@ -48,7 +48,7 @@ async function getBySifra (sifra_komitenta){
     return await httpService.get('/Komitent/'+sifra_komitenta)
     .then((res)=>{
         if(App.DEV) console.table(res.data);
-        return res.data;
+        return res;
     }).catch((e)=>{
         console.log(e)
         return {poruka: e};
