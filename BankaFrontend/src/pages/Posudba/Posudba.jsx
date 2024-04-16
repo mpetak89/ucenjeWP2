@@ -14,7 +14,7 @@ const navigate = useNavigate();
 
 
 async function dohvatiPosudbe (){
-    await PosudbaService.get()
+    await PosudbaService.getPosudbe()
     .then ((res)=>{
         setPosudba(res.data);
     })
@@ -27,7 +27,7 @@ useEffect(()=>{
 },[]);
 
 async function obrisiPosudba (sifra_posudbe){
-    const odgovor = await PosudbaService.obrisi(sifra_posudbe);
+    const odgovor = await PosudbaService.obrisiPosudba(sifra_posudbe);
     if (odgovor.ok) {
 alert (odgovor.poruka.data.poruka);
 dohvatiPosudbe();

@@ -48,7 +48,7 @@ async function getBySifra (sifra_posudbe){
     return await httpService.get('/Posudba/'+sifra_posudbe)
     .then((res)=>{
         if(App.DEV) console.table(res.data);
-        return res.data;
+        return res;
     }).catch((e)=>{
         console.log(e)
         return {poruka: e};

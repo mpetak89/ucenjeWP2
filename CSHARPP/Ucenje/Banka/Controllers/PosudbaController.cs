@@ -39,13 +39,7 @@ namespace Banka.Controllers
                 {
                     return new EmptyResult();
                 }
-                foreach (var item in lista)
-                {
-                    Console.WriteLine(item.Kredit!.vrsta_kredita);
-                    Console.WriteLine(item.Komitent!.ime);
-
-                }
-                return new JsonResult(lista.MapPosudbaReadList());
+                return new JsonResult(lista);
             }
             catch (Exception ex)
             {
@@ -53,31 +47,33 @@ namespace Banka.Controllers
                     ex.Message);
             }
         }
+
         [HttpGet]
         [Route("{sifra_posudbe:int}")]
         public IActionResult GetBySifra(int sifra_posudbe)
         {
-
             if (!ModelState.IsValid || sifra_posudbe <= 0)
             {
                 return BadRequest(ModelState);
             }
             try
             {
-                var Posudba = _context.Posudbe.Find(sifra_posudbe);
-                if (Posudba == null)
+                var posudba= _context.Posudbe.Find(sifra_posudbe);
+                if (posudba == null)
                 {
                     return new EmptyResult();
+
                 }
-                return new JsonResult(Posudba.MapPosudbaReadToDTO());
+                return new JsonResult(posudba.MapPosudbaRead());
             }
             catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status503ServiceUnavailable,
-                    ex.Message);
-            }
-        }
 
+            {
+                return StatusCode(StatusCodes.Status503ServiceUnavailable, ex.Message);
+            }
+
+
+        }
 
         [HttpPost]
         public IActionResult Post(Posudba entitet)
@@ -101,7 +97,7 @@ namespace Banka.Controllers
 
 
         [HttpPut]
-        [Route("{sifra_posudbe:int}")]
+        [Route("{sifra:int}")]
         public IActionResult Put(int sifra, Posudba entitet)
         {
             if (sifra <= 0 || !ModelState.IsValid || entitet == null)

@@ -8,7 +8,7 @@ export default function PosudbaDodaj (){
     const navigate = useNavigate(); 
 
     async function dodajPosudba(posudba){
-        const odgovor = await Posudba.dodajPosudba(posudba);
+        const odgovor = await PosudbaService.dodajPosudba(posudba);
         if(odgovor.ok){
           navigate(RoutesNames.POSUDBA_PREGLED);
         }else{
