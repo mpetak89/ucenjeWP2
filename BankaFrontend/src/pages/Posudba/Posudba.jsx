@@ -58,8 +58,8 @@ dohvatiPosudbe();
                     {posudba && posudba.map((posudba, index)=>(
                         <tr key = {index}>
                             <td className="centar">{posudba.sifra_posudbe}</td>
-                            <td className="centar">{kredit.sifra_kredita}</td>
-                            <td className="centar">{komitent.sifra_komitenta}</td>
+                            <td className="centar">{posudba.sifra_kredita}</td>
+                            <td className="centar">{posudba.sifra_komitenta}</td>
                             <td className="centar">{posudba.datum_podizanja}</td>
                             <td className="centar">{posudba.datum_vracanja}</td>
                             <td className="centar">{posudba.iznos}</td>

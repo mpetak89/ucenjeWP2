@@ -16,8 +16,8 @@ namespace Banka.Data
         public DbSet<Komitent> Komitenti { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Posudba>().HasOne(g => g.Kredit);
-            modelBuilder.Entity<Posudba>().HasOne(g => g.Komitent);
+            //modelBuilder.Entity<Posudba>().HasOne(g => g.Kredit);
+            //modelBuilder.Entity<Posudba>().HasOne(g => g.Komitent);
 
 
         }

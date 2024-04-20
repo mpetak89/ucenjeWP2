@@ -31,14 +31,14 @@ namespace Banka.Controllers
             }
             try
             {
-                var lista = _context.Posudbe
-                    .Include(g => g.Kredit)
-                    .Include(g => g.Komitent)
-                    .ToList();
-                if (lista == null || lista.Count == 0)
-                {
-                    return new EmptyResult();
-                }
+                var lista = _context.Posudbe;
+                    //.Include(g => g.Kredit)
+                //    .Include(g => g.Komitent)
+                ////    .ToList();
+                ////if (lista == null || lista.Count == 0)
+                //{
+                //    return new EmptyResult();
+                //}
                 return new JsonResult(lista);
             }
             catch (Exception ex)
@@ -46,6 +46,7 @@ namespace Banka.Controllers
                 return StatusCode(StatusCodes.Status503ServiceUnavailable,
                     ex.Message);
             }
+        
         }
 
         [HttpGet]
@@ -97,21 +98,21 @@ namespace Banka.Controllers
 
 
         [HttpPut]
-        [Route("{sifra:int}")]
-        public IActionResult Put(int sifra, Posudba entitet)
+        [Route("{sifra_posudbe:int}")]
+        public IActionResult Put(int sifra_posudbe, Posudba entitet)
         {
-            if (sifra <= 0 || !ModelState.IsValid || entitet == null)
+            if (sifra_posudbe <= 0 || !ModelState.IsValid || entitet == null)
             {
                 return BadRequest();
             }
             try
             {
 
-                var entitetIzBaze = _context.Posudbe.Find(sifra);
+                var entitetIzBaze = _context.Posudbe.Find(sifra_posudbe);
 
                 if (entitetIzBaze == null)
                 {
-                    return StatusCode(StatusCodes.Status204NoContent, sifra);
+                    return StatusCode(StatusCodes.Status204NoContent, sifra_posudbe);
                 }
 
                 entitetIzBaze.sifra_posudbe = entitet.sifra_posudbe;
@@ -135,22 +136,22 @@ namespace Banka.Controllers
 
 
         [HttpDelete]
-        [Route("{sifra:int}")]
+        [Route("{sifra_posudbe:int}")]
         [Produces("application/json")]
-        public IActionResult Delete(int sifra)
+        public IActionResult Delete(int sifra_posudbe)
         {
-            if (!ModelState.IsValid || sifra <= 0)
+            if (!ModelState.IsValid || sifra_posudbe <= 0)
             {
                 return BadRequest();
             }
 
             try
             {
-                var entitetIzbaze = _context.Posudbe.Find(sifra);
+                var entitetIzbaze = _context.Posudbe.Find(sifra_posudbe);
 
                 if (entitetIzbaze == null)
                 {
-                    return StatusCode(StatusCodes.Status204NoContent, sifra);
+                    return StatusCode(StatusCodes.Status204NoContent, sifra_posudbe);
                 }
 
                 _context.Posudbe.Remove(entitetIzbaze);
