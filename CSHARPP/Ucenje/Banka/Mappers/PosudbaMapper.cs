@@ -6,7 +6,7 @@ namespace Banka.Mappers
 {
     public class PosudbaMapper
     {
-        public static Mapper InicijalizirajRead()
+        public static Mapper InicijalizirajReadToDTO()
         {
             return new Mapper(
                     new MapperConfiguration(c =>
@@ -15,13 +15,22 @@ namespace Banka.Mappers
                     })
                 );
         }
-        public static Mapper InicijalizirajInsertUpdate()
+        public static Mapper InicijalizirajReadFromDTO()
         {
             return new Mapper(
-                    new MapperConfiguration(c =>
-                    {
-                        c.CreateMap<Posudba, PosudbaDTOInsertUpdate>();
-                    })
+                new MapperConfiguration(c =>
+                {
+                    c.CreateMap<PosudbaDTORead, Posudba>();
+                })
+                );
+        }
+        public static Mapper InicijalizirajInsertUpdateToDTO()
+        {
+            return new Mapper(
+                new MapperConfiguration(c =>
+                {
+                    c.CreateMap<Posudba, PosudbaDTOInsertUpdate>();
+                })
                 );
         }
     }

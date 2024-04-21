@@ -44,7 +44,7 @@ function NavBar() {
           </Nav>
         </Navbar.Collapse>
         
-        <Nav.Link target="_blank" href="http://mpetak1811-001-site1.ftempurl.com/swagger/index.html">API dokumentacija</Nav.Link>
+        <Nav.Link target="_blank" href="https://mpetak1811-001-site1.ftempurl.com/swagger/index.html">API dokumentacija</Nav.Link>
        </Container>
     </Navbar>
   );

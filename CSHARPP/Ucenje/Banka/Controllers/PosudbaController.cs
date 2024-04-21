@@ -32,7 +32,7 @@ namespace Banka.Controllers
             try
             {
                 var lista = _context.Posudbe;
-                    //.Include(g => g.Kredit)
+                //.Include(g => g.Kredit)
                 //    .Include(g => g.Komitent)
                 ////    .ToList();
                 ////if (lista == null || lista.Count == 0)
@@ -46,7 +46,7 @@ namespace Banka.Controllers
                 return StatusCode(StatusCodes.Status503ServiceUnavailable,
                     ex.Message);
             }
-        
+
         }
 
         [HttpGet]
@@ -59,13 +59,13 @@ namespace Banka.Controllers
             }
             try
             {
-                var posudba= _context.Posudbe.Find(sifra_posudbe);
+                var posudba = _context.Posudbe.Find(sifra_posudbe);
                 if (posudba == null)
                 {
                     return new EmptyResult();
 
                 }
-                return new JsonResult(posudba.MapPosudbaRead());
+                return new JsonResult(posudba.MapPosudbaReadToDTO());
             }
             catch (Exception ex)
 

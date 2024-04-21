@@ -43,7 +43,7 @@ const posudba =
     sifra_posudbe: parseInt (podaci.get('sifra_posudbe')),
     sifra_kredita: parseInt (podaci.get('sifra_kredita')),
     sifra_komitenta: parseInt (podaci.get('sifra_komitenta')),
-    datum_podizanja: podaci.get (podaci.get('datum_podizanja')),
+    datum_podizanja: podaci.get('datum_podizanja'),
     datum_vracanja: podaci.get ('datum_vracanja'),
     iznos: parseInt (podaci.get ('iznos')),
     kamata: parseInt(podaci.get ('kamata')),

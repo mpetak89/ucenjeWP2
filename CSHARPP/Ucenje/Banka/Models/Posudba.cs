@@ -20,7 +20,7 @@ namespace Banka.Models
         public int sifra_komitenta { get; set; }
         //public string? oib { get; set; }
         //public string? ime { get; set; }
-         
+
         public DateTime? datum_podizanja { get; set; }
         public DateTime? datum_vracanja { get; set; }
         public decimal? iznos { get; set; }
