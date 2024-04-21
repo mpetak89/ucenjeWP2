@@ -1,6 +1,9 @@
 .centar {  
     text-align:center;
 }
+.slika{
+width: 500px; 
+}
 .gumb{
     width: 100%;
     margin-bottom: 5px;

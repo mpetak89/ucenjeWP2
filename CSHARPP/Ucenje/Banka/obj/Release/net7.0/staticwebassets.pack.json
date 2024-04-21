@@ -1,12 +1,12 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-BwK8LXC3.css",
-      "PackagePath": "staticwebassets\\assets\\index-BwK8LXC3.css"
+      "Id": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-CUHt2Ipo.css",
+      "PackagePath": "staticwebassets\\assets\\index-CUHt2Ipo.css"
     },
     {
-      "Id": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-C9-jrDwQ.js",
-      "PackagePath": "staticwebassets\\assets\\index-C9-jrDwQ.js"
+      "Id": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-NY_FexuI.js",
+      "PackagePath": "staticwebassets\\assets\\index-NY_FexuI.js"
     },
     {
       "Id": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\favicon.ico",
@@ -15,6 +15,10 @@
     {
       "Id": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\mcduck.gif",
+      "PackagePath": "staticwebassets\\mcduck.gif"
     },
     {
       "Id": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\vite.svg",

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7K5W76MO7ClRGXpeiXFAnwlU1o80DWyDWTpe59TnPVM=",
+  "Hash": "Va7kwO/PX3L/Vh02VHKIkDHgpzXVxK2f+dBvSm8C2xA=",
   "Source": "Banka",
   "BasePath": "_content/Banka",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-BwK8LXC3.css",
+      "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-CUHt2Ipo.css",
       "SourceId": "Banka",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\",
       "BasePath": "_content/Banka",
-      "RelativePath": "assets/index-BwK8LXC3.css",
+      "RelativePath": "assets/index-CUHt2Ipo.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -33,15 +33,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\index-BwK8LXC3.css"
+      "OriginalItemSpec": "wwwroot\\assets\\index-CUHt2Ipo.css"
     },
     {
-      "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-C9-jrDwQ.js",
+      "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-NY_FexuI.js",
       "SourceId": "Banka",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\",
       "BasePath": "_content/Banka",
-      "RelativePath": "assets/index-C9-jrDwQ.js",
+      "RelativePath": "assets/index-NY_FexuI.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -52,7 +52,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\index-C9-jrDwQ.js"
+      "OriginalItemSpec": "wwwroot\\assets\\index-NY_FexuI.js"
     },
     {
       "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\favicon.ico",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\mcduck.gif",
+      "SourceId": "Banka",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\",
+      "BasePath": "_content/Banka",
+      "RelativePath": "mcduck.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\mcduck.gif"
     },
     {
       "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\vite.svg",
