@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { RoutesNames } from "../../constants";
 import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
+import moment from "moment";
 
 export default function Komitenti (){
 const [komitenti, setKomitenti] = useState();
@@ -33,6 +34,14 @@ alert (odgovor.poruka.data.poruka);
 dohvatiKomitente();
     }
 }
+function formatirajDatum(datum_rodenja){
+    let mdp = moment.utc(datum_rodenja);
+    if(mdp.hour()==0 && mdp.minutes()==0){
+        return mdp.format('DD. MM. YYYY.');
+    }
+    return mdp.format('DD. MM. YYYY. HH:mm');
+    
+    }
 
     return(
         <Container>
@@ -61,7 +70,15 @@ dohvatiKomitente();
                             <td className="centar">{komitent.oib}</td>
                             <td className="centar">{komitent.ime}</td>
                             <td className="centar">{komitent.prezime}</td>
-                            <td className="centar">{komitent.datum_rodenja}</td>
+                            <td className="centar">
+                            <p>
+                                {komitent.datum_rodenja==null 
+                                ? 'Nije definirano'
+                                :   
+                                formatirajDatum(komitent.datum_rodenja)
+                                }
+                                </p>
+                                </td>
                             <td className="centar">{komitent.ulica_stanovanja}</td>
                             <td className="centar">{komitent.grad_stanovanja}</td>
 

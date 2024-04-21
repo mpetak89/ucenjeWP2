@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LuIbrkKhHUGnlmZBmhMpYtBeRJxjkXsZ1RHC3E9cCwQ=",
+  "Hash": "7bAeyV1VIB9v+qPFBONEOo6UyRAtVy3jAgm1Kd+Ltjs=",
   "Source": "Banka",
   "BasePath": "_content/Banka",
   "Mode": "Default",
@@ -36,12 +36,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\index-BwK8LXC3.css"
     },
     {
-      "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-dHDtvlRU.js",
+      "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\assets\\index-C9-jrDwQ.js",
       "SourceId": "Banka",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\",
       "BasePath": "_content/Banka",
-      "RelativePath": "assets/index-dHDtvlRU.js",
+      "RelativePath": "assets/index-C9-jrDwQ.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -52,7 +52,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\index-dHDtvlRU.js"
+      "OriginalItemSpec": "wwwroot\\assets\\index-C9-jrDwQ.js"
     },
     {
       "Identity": "C:\\Users\\Korisnik\\Documents\\GitHub\\ucenjeWP2\\CSHARPP\\Ucenje\\Banka\\wwwroot\\favicon.ico",

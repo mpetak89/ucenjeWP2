@@ -7,6 +7,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { RoutesNames } from "../../constants";
 import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
+import { NumberFormatBase, NumericFormat } from "react-number-format";
+import moment from "moment";
 
 export default function Posudba (){
 const [posudba, setPosudba] = useState();
@@ -34,6 +36,16 @@ dohvatiPosudbe();
     }
 }
 
+function formatirajDatum(datum_podizanja,datum_vracanja){
+    let mdp = moment.utc(datum_podizanja, datum_vracanja);
+    if(mdp.hour()==0 && mdp.minutes()==0){
+        return mdp.format('DD. MM. YYYY.');
+    }
+    return mdp.format('DD. MM. YYYY. HH:mm');
+    
+    }
+
+
     return(
         <Container>
             <Link to={RoutesNames.POSUDBA_NOVI} className="btn btn-success gumb">
@@ -60,10 +72,34 @@ dohvatiPosudbe();
                             <td className="centar">{posudba.sifra_posudbe}</td>
                             <td className="centar">{posudba.sifra_kredita}</td>
                             <td className="centar">{posudba.sifra_komitenta}</td>
-                            <td className="centar">{posudba.datum_podizanja}</td>
-                            <td className="centar">{posudba.datum_vracanja}</td>
-                            <td className="centar">{posudba.iznos}</td>
-                            <td className="centar">{posudba.kamata}</td>
+                            <td className="centar">
+                            <p>
+                                {posudba.datum_podizanja==null 
+                                ? 'Nije definirano'
+                                :   
+                                formatirajDatum(posudba.datum_podizanja)
+                                }
+                                </p>
+                                </td>
+                                <td className="centar">
+                            <p>
+                                {posudba.datum_vracanja==null 
+                                ? ''
+                                :   
+                                formatirajDatum(posudba.datum_vracanja)
+                                }
+                                </p>
+                                </td>
+                            <td className="centar">
+                            <NumericFormat value={posudba.iznos}
+                            displayType={'text'}
+                            thousandSeparator='.'
+                            decimalSeparator=','
+                            decimalScale={2}
+                            fixedDecimalScale>
+                                </NumericFormat></td>
+                            <td className="centar">
+                                {posudba.kamata}</td>
 
                             <td className="centar">
                                 <Link to={RoutesNames.POSUDBA_NOVI} className="btn btn-success gumb2, centar">
